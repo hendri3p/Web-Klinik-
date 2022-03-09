@@ -1,0 +1,46 @@
+Sistem :
+Home :
+-Login
+-Daftar Akun
+
+Admin :
+Pasien Rawat Jalan :
+- pilih tanggal
+- melihat antrian pasien pada tgl tsb
+- upload hasil diagnosa
+- upload resep obat
+- input metode pembayaran
+Pasien Rawat Inap (Bersalin) :
+- pilih tanggal
+- melihat antrian pasien pada tgl tsb
+- upload hasil diagnosa
+- upload resep obat
+- input metode pembayaran
+Data Pasien :
+- Pilih Bulan
+- Memilih jenis pelayanan data pasien ( KB, Imunisasi, ANC, Bersalin )
+- Menampilkan data pasien berdasarkan jenis pelayanan 
+
+Pasien :
+Download Kartu Pasien
+Daftar Berobat :
+- Memilih jenis pelayanan ( Bersalin, KB, Imunisasi, ANC )
+- Memilih tanggal
+
+Yang Belum Kelar :
+- Icon Web
+- Warna diganti hijau
+
+Index :
+- Rapihin Posisi
+- Gmaps
+
+Adm_rawatjalan & rawatinap :
+- pilih tgl (berdasarkan tgl)
+- tombol edit
+- tombol upload
+
+Adm_datauser :
+- pilih bulan
+- pilih jenis pelayanan (tersortir berdasarkan jenis)
+

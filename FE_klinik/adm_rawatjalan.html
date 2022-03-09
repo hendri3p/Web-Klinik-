@@ -101,7 +101,6 @@
                 <ul class="nav-main">
                     <li class="nav-main-item">
                         <a class="nav-main-link active" href="adm_dash.html">
-                            <i class="nav-main-link-icon si si-speedometer"></i>
                             <span class="nav-main-link-name">Dashboard</span>
                         </a>
                     </li>
@@ -119,6 +118,7 @@
                         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-5 mb-2 text-center text-sm-left">
                             <div class="flex-sm-fill">
                                 <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Pasien Rawat Jalan</h1>
+                                <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Klinik Bidan Nyimas</h2>
                             </div>
                             <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
                                 <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
@@ -136,9 +136,6 @@
             <div class="content">
                     <!-- Dynamic Table Full -->
                     <div class="block">
-                        <div class="block-header">
-                            <h3 class="block-title">Dynamic Table <small>Full</small></h3>
-                        </div>
                         <div class="block-content block-content-full">
                             <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
                             <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
@@ -146,556 +143,47 @@
                                     <tr>
                                         <th class="text-center" style="width: 80px;">Tgl</th>
                                         <th>Nama</th>
+                                        <th>Umur</th>
                                         <th>Alamat</th>
                                         <th>No.HP</th>
-                                        <th>Berat Badan</th>
-                                        <th>Tekanan Darah</th>
-                                        <th>Umur</th>
-                                        <th>L/P</th>
+                                        <th>Pelayanan</th>
                                         <th>Keluhan</th>
                                         <th>Obat</th>
+                                        <th>Hasil Diagnosa</th>
+                                        <th>Pembayaran</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="text-center font-size-sm">1</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Marie Duncan</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-warning">Trial</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">8 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                                                                                                        
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">2</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Sara Fields</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client2<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-info">Business</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">6 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                                 
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">3</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Judy Ford</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client3<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-warning">Trial</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">2 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">4</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Amanda Powell</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client4<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-info">Business</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">2 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">5</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Megan Fuller</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client5<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-info">Business</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">6 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">6</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Megan Fuller</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client6<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-info">Business</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">5 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">7</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Jose Wagner</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client7<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-info">Business</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">4 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">8</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Susan Day</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client8<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-success">VIP</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">5 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">9</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Lori Grant</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client9<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-info">Business</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">3 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">10</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Wayne Garcia</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client10<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-danger">Disabled</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">7 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">11</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Sara Fields</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client11<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-info">Business</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">7 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">12</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Susan Day</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client12<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-primary">Personal</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">10 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">13</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Jose Wagner</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client13<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-success">VIP</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">6 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">14</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Jeffrey Shaw</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client14<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-success">VIP</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">4 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">15</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Melissa Rice</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client15<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-success">VIP</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">5 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">16</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Adam McCoy</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client16<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-primary">Personal</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">2 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center font-size-sm">17</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Danielle Jones</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client17<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-info">Business</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">8 days ago</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
-                                    </tr>
+                                    
                                     <tr>
                                         <td class="text-center font-size-sm">18</td>
                                         <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Laura Carr</a>
+                                            <a href="be_pages_generic_blank.html">Umi</a>
                                         </td>
                                         <td class="d-none d-sm-table-cell font-size-sm">
-                                            client18<em class="text-muted">@example.com</em>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-success">VIP</span>
-                                        </td>
-                                        <td>
-                                            <em class="text-muted font-size-sm">8 days ago</em>
+                                            35
                                         </td>
                                         <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
+                                            Kemiling
                                         </td>
                                         <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
+                                            08xxxxxxx
                                         </td>
                                         <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
+                                            ANC
                                         </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            Mual dan Pusing
                                         </td>
-                                                                                <td class="d-none d-sm-table-cell font-size-sm">
-                                            client1<em class="text-muted">@example.com</em>
-                                        </td>                                          
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            
+                                        </td>
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                             
+                                        </td>
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            BPJS
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
