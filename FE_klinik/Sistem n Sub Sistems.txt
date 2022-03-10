@@ -29,11 +29,7 @@ Daftar Berobat :
 
 Yang Belum Kelar :
 - Icon Web
-- Warna diganti hijau
 
-Index :
-- Rapihin Posisi
-- Gmaps
 
 Adm_rawatjalan & rawatinap :
 - pilih tgl (berdasarkan tgl)
