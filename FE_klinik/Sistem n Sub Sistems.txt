@@ -28,8 +28,6 @@ Daftar Berobat :
 - Memilih tanggal
 
 Yang Belum Kelar :
-- Icon Web
-
 
 Adm_rawatjalan & rawatinap :
 - pilih tgl (berdasarkan tgl)
