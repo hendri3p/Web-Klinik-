@@ -123,6 +123,9 @@
                             </div>
                             <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
                                 <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                                    <a class="btn btn-success px-4 py-2" data-toggle="click-ripple" href="index.html">
+                                        <i class="fa fa-save"></i> Simpan
+                                    </a>
                                     <a class="btn btn-danger px-4 py-2" data-toggle="click-ripple" href="index.html">
                                         <i class="si si-logout"></i> Logout
                                     </a>
@@ -138,6 +141,20 @@
                     <!-- Dynamic Table Full -->
                     <div class="block">
                         <div class="block-content block-content-full">
+                            <div class="form-group">
+                                <label for="tgl">Daftar Antrian Pasien</label>
+                                <p></p>
+                                <input type="date" class="btn btn-light" id="tgl" name="tgl" placeholder="Tanggal Berobat">
+                                
+                                <select class="btn btn-light" id="example-select" name="example-select">
+                                    <option value="0">Pilih Jenis Perawatan</option>
+                                    <option value="1">Bersalin</option>
+                                    <option value="2">KB</option>
+                                    <option value="3">Imunisasi</option>
+                                    <option value="4">Pemeriksaan Kehamilan</option>
+                                </select>
+                            </div>
+        
                                 
                             <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
                             <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
@@ -179,13 +196,17 @@
                                             Mual dan Pusing
                                         </td>
                                         <td class="d-none d-sm-table-cell font-size-sm">
-                                            <button class="btn btn-success">Edit</button>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
                                             <button class="btn btn-success">Upload</button> 
                                         </td>
                                         <td class="d-none d-sm-table-cell font-size-sm">
-                                            Umum
+                                            <button class="btn btn-success">Edit</button>
+                                        </td>
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            <select class="form-control" id="example-select" name="example-select">
+                                                <option value="0">Pilih Jenis</option>
+                                                <option value="1">Umum</option>
+                                                <option value="2">BPJS</option>
+                                            </select>
                                         </td>
                                     </tr>
                                 </tbody>

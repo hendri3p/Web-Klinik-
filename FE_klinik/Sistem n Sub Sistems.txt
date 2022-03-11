@@ -28,13 +28,4 @@ Daftar Berobat :
 - Memilih tanggal
 
 Yang Belum Kelar :
-
-Adm_rawatjalan & rawatinap :
-- pilih tgl (berdasarkan tgl)
-- tombol edit
-- tombol upload
-
-Adm_datauser :
-- pilih bulan
-- pilih jenis pelayanan (tersortir berdasarkan jenis)
-
+- icons Hi Admin
