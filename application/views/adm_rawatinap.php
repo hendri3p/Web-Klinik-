@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Klinik Bidan Nyimas</title>
+    <title>Pasien Rawat Inap</title>
     <meta name="description" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
@@ -71,6 +71,7 @@
             'main-content-narrow'                       Full width Main Content with a percentage width (screen width > 1200px)
         -->
     <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
+    
         <!-- Sidebar -->
         <!--
                 Sidebar Mini Mode - Display Helper classes
@@ -87,10 +88,10 @@
             <!-- Side Header -->
             <div class="content-header bg-white-5">
                 <!-- Logo -->
-                <a class="font-w600 text-dual" href="index.html">
+                <a class="font-w600 text-dual" href="index.php">
                     <i class="fa fa-circle-notch text-primary"></i>
                     <span class="smini-hide">
-                        <span class="font-w700 font-size-h5">Selamat Datang</span> 
+                        <span class="font-w700 font-size-h5">Hi Admin</span>
                     </span>
                 </a>
                 <!-- END Logo -->
@@ -100,7 +101,7 @@
             <div class="content-side content-side-full">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="usr_dash.html">
+                        <a class="nav-main-link active" href="adm_dash.php">
                             <span class="nav-main-link-name">Dashboard</span>
                         </a>
                     </li>
@@ -117,12 +118,15 @@
                     <div class="content content-narrow content-full">
                         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-5 text-center text-sm-left">
                             <div class="flex-sm-fill">
-                                <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Dashboard</h1>
+                                <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Pasien Rawat Inap</h1>
                                 <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Klinik Bidan Nyimas</h2>
                             </div>
                             <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
                                 <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                    <a class="btn btn-danger btn-lg btn-block" data-toggle="click-ripple" href="index.html">
+                                    <a class="btn btn-success px-4 py-2" data-toggle="click-ripple" href="index.php">
+                                        <i class="fa fa-save"></i> Simpan
+                                    </a>
+                                    <a class="btn btn-danger px-4 py-2" data-toggle="click-ripple" href="index.php">
                                         <i class="si si-logout"></i> Logout
                                     </a>
                                 </span>
@@ -133,45 +137,83 @@
             </div>
             <!-- END Hero -->
             <!-- Page Content -->
-            <div class="content content-narrow">
-                <div class="content">
-                    <!-- Simple Ribbon -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <!-- Glass on Background Color -->
-                            <div class="block">
-                                <div class="bg-image" style="background-color: #1f939b;">
-                                    <div class="block-content block-content-full bg-black-50 ribbon ribbon-glass">
-                                        <div class="text-center py-6">
-                                            <h3 class="text-white mb-0">Daftar Berobat</h3>
-                                        </div>
-                                        <div class="col-md-12 col-sm-12">
-                                            <a href="usr_daftarberobat.html"><button type="button" class="btn btn-success btn-lg btn-block">Daftar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="content">
+                    <!-- Dynamic Table Full -->
+                    <div class="block">
+                        <div class="block-content block-content-full">
+                            <div class="form-group">
+                                <label for="tgl">Daftar Antrian Pasien</label>
+                                <p></p>
+                                <input type="date" class="btn btn-light" id="tgl" name="tgl" placeholder="Tanggal Berobat">
+                                
+                                <select class="btn btn-light" id="example-select" name="example-select">
+                                    <option value="0">Pilih Jenis Perawatan</option>
+                                    <option value="1">Bersalin</option>
+                                    <option value="2">KB</option>
+                                    <option value="3">Imunisasi</option>
+                                    <option value="4">Pemeriksaan Kehamilan</option>
+                                </select>
                             </div>
-                            <!-- END Glass on Background Color -->
+        
+                                
+                            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+                            <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                                
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="width: 80px;">Tgl</th>
+                                        <th>Nama</th>
+                                        <th>Umur</th>
+                                        <th>Alamat</th>
+                                        <th>No.HP</th>
+                                        <th>Pelayanan</th>
+                                        <th>Keluhan</th>
+                                        <th>Obat</th>
+                                        <th>Hasil Diagnosa</th>
+                                        <th>Pembayaran</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td class="text-center font-size-sm">10</td>
+                                        <td class="font-w600 font-size-sm">
+                                            <a href="be_pages_generic_blank.html">Umi</a>
+                                        </td>
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            35
+                                        </td>
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            Kemiling
+                                        </td>
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            08xxxxxxx
+                                        </td>
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            Bersalin
+                                        </td>
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            Mual dan Pusing
+                                        </td>
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            <button class="btn btn-success">Upload</button> 
+                                        </td>
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            <button class="btn btn-success">Edit</button>
+                                        </td>
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            <select class="form-control" id="example-select" name="example-select">
+                                                <option value="0">Pilih Jenis</option>
+                                                <option value="1">Umum</option>
+                                                <option value="2">BPJS</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="col-md-6">
-                            <!-- Glass on Background Image -->
-                            <div class="block">
-                                <div class="bg-image" style="background-color: #1f939b;">
-                                    <div class="block-content block-content-full bg-black-50 ribbon ribbon-glass">
-                                        <div class="text-center py-6">
-                                            <h3 class="text-white mb-0">Kartu Berobat</h3>
-                                        </div>
-                                        <div class="col-md-12 col-sm-12">
-                                            <a href="usr_dash.html"><button type="button" class="btn btn-success btn-lg btn-block">Unduh</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END Glass on Background Image -->
                     </div>
-                </div>
-                <!-- END Simple Ribbon -->
+                    <!-- END Dynamic Table Full -->                
             </div>
             <!-- END Page Content -->
         </main>
@@ -210,6 +252,12 @@
     <script src="oneui/js/plugins/chart.js/Chart.bundle.min.js"></script>
     <!-- Page JS Code -->
     <script src="oneui/js/pages/be_pages_dashboard.min.js"></script>
+
+    <!-- DataTables -->
+        <script src="oneui/js/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="oneui/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="oneui/js/plugins/datatables/buttons/dataTables.buttons.min.js"></script>
+        <script src="oneui/js/pages/be_tables_datatables.min.js"></script>            
 </body>
 
 </html>

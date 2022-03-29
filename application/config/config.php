@@ -23,7 +23,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/Websiteklinik/';
+$config['base_url'] = 'http://localhost/Web-Klinik-/';
+
+$server = "localhost";
+$user = "root";
+$pass = "";
+$database = "klinik";
+$conn = mysqli_connect($server,$user,$pass,$database);
+
+if (!$conn) {
+    die(<script>alert('Gagal terhubung dengan database.')</;
+}
 
 /*
 |--------------------------------------------------------------------------

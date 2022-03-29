@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Laporan Data Pasien</title>
+    <title>Daftar Berobat Klinik Bidan Nyimas</title>
     <meta name="description" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
@@ -20,7 +20,6 @@
     <link rel="shortcut icon" href="assets/images/Logo_Bidan_Nyimas-3.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/Logo_Bidan_Nyimas-3.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/Logo_Bidan_Nyimas-3.png">
-    <!-- END Icons -->
     <!-- Stylesheets -->
     <!-- Fonts and OneUI framework -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
@@ -28,6 +27,11 @@
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
     <!-- END Stylesheets -->
+    <link rel="stylesheet" href="oneui/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="oneui/js/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" href="oneui/js/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="oneui/js/plugins/ion-rangeslider/css/ion.rangeSlider.css">
+    <link rel="stylesheet" href="oneui/js/plugins/dropzone/dist/min/dropzone.min.css">
 </head>
 
 <body>
@@ -87,10 +91,10 @@
             <!-- Side Header -->
             <div class="content-header bg-white-5">
                 <!-- Logo -->
-                <a class="font-w600 text-dual" href="index.html">
+                <a class="font-w600 text-dual" href="index.php">
                     <i class="fa fa-circle-notch text-primary"></i>
                     <span class="smini-hide">
-                        <span class="font-w700 font-size-h5">Hi Admin</span>
+                        <span class="font-w700 font-size-h5">Selamat Datang</span> 
                     </span>
                 </a>
                 <!-- END Logo -->
@@ -100,7 +104,7 @@
             <div class="content-side content-side-full">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="adm_dash.html">
+                        <a class="nav-main-link active" href="usr_dash.php">
                             <span class="nav-main-link-name">Dashboard</span>
                         </a>
                     </li>
@@ -117,12 +121,12 @@
                     <div class="content content-narrow content-full">
                         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-5 text-center text-sm-left">
                             <div class="flex-sm-fill">
-                                <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Laporan Data Pasien</h1>
+                                <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Pendaftaran Berobat</h1>
                                 <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Klinik Bidan Nyimas</h2>
                             </div>
                             <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
                                 <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                    <a class="btn btn-danger px-4 py-2" data-toggle="click-ripple" href="index.html">
+                                    <a class="btn btn-danger btn-lg btn-block" data-toggle="click-ripple" href="index.php">
                                         <i class="si si-logout"></i> Logout
                                     </a>
                                 </span>
@@ -133,80 +137,55 @@
             </div>
             <!-- END Hero -->
             <!-- Page Content -->
-            <div class="content">
-                    <!-- Dynamic Table Full -->
+            <div class="content content-narrow">
+                <div class="content">
+                    <!-- Basic -->
                     <div class="block">
-                        <div class="block-content block-content-full">
-                            <div class="form-group">
-                                <label for="tgl">Daftar Antrian Pasien</label>
-                                <p></p>
-                                <input type="date" class="btn btn-light" id="tgl" name="tgl" placeholder="Tanggal Berobat">
-                                
-                                <select class="btn btn-light" id="example-select" name="example-select">
-                                    <option value="0">Pilih Jenis Perawatan</option>
-                                    <option value="1">Bersalin</option>
-                                    <option value="2">KB</option>
-                                    <option value="3">Imunisasi</option>
-                                    <option value="4">Pemeriksaan Kehamilan</option>
-                                </select>
-                            </div>
-                            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
-                            <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center" style="width: 80px;">Tgl</th>
-                                        <th>Nama</th>
-                                        <th>Umur</th>
-                                        <th>Alamat</th>
-                                        <th>No.HP</th>
-                                        <th>Pelayanan</th>
-                                        <th>Keluhan</th>
-                                        <th>Obat</th>
-                                        <th>Hasil Diagnosa</th>
-                                        <th>Pembayaran</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr>
-                                        <td class="text-center font-size-sm">10</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Umi</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            35
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            Kemiling
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            08xxxxxxx
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            Bersalin
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            Mual dan Pusing
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                             
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            Umum
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="block-header">
+                            <h3 class="block-title">Form Pendaftaran Berobat</h3>
                         </div>
-                    </div>
-                    <!-- END Dynamic Table Full -->                
-            </div>
-            <!-- END Page Content -->
+                        <div class="block-content block-content-full">
+                            <form action="be_forms_elements.html" method="POST" enctype="multipart/form-data" onsubmit="return false;">
+                                <div class="row push">
+                                    <div class="col-lg-4">
+                                </div>
+                                    <div class="col-lg-8 col-xl-5">
+                                        <div class="form-group">
+                                            <label for="keluhan">Keluhan</label>
+                                            <textarea class="form-control" id="keluhan" name="keluhan" rows="4" placeholder="Tuliskan keluhan Anda disini"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="riwayat">Riwayat Penyakit</label>
+                                            <textarea class="form-control" id="riwayat" name="riwayat" rows="4" placeholder="Tuliskan riwayat penyakit Anda disini"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="example-select">Jenis Perawatan</label>
+                                            <select class="form-control" id="example-select" name="example-select">
+                                                <option value="0">Pilih Jenis Perawatan</option>
+                                                <option value="1">Bersalin</option>
+                                                <option value="2">KB</option>
+                                                <option value="3">Imunisasi</option>
+                                                <option value="4">Pemeriksaan Kehamilan</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tgl">Tanggal Berobat</label>
+                                            <input type="date" class="form-control" id="tgl" name="tgl" placeholder="Tanggal Berobat">
+                                        </div>
+                                        <div class="col-md-12 col-sm-12">
+                                            <a href="usr_dash.php"><button type="button" class="btn btn-success btn-lg btn-block">Daftar</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- END Page Content -->
         </main>
         <!-- END Main Container -->
+        <!-- Footer -->
+        <footer id="page-footer" class="bg-body-light">
+        </footer>
+        <!-- END Footer -->
     </div>
     <!-- END Page Container -->
     <!--
@@ -237,12 +216,16 @@
     <script src="oneui/js/plugins/chart.js/Chart.bundle.min.js"></script>
     <!-- Page JS Code -->
     <script src="oneui/js/pages/be_pages_dashboard.min.js"></script>
-
-    <!-- DataTables -->
-        <script src="oneui/js/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="oneui/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
-        <script src="oneui/js/plugins/datatables/buttons/dataTables.buttons.min.js"></script>
-        <script src="oneui/js/pages/be_tables_datatables.min.js"></script>            
+    <script src="oneui/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="oneui/js/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <script src="oneui/js/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+    <script src="oneui/js/plugins/select2/js/select2.full.min.js"></script>
+    <script src="oneui/js/plugins/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="oneui/js/plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+    <script src="oneui/js/plugins/dropzone/dropzone.min.js"></script>
+    <script>
+    jQuery(function() { One.helpers(['datepicker', 'colorpicker', 'maxlength', 'select2', 'masked-inputs', 'rangeslider']); });
+    </script>
 </body>
 
 </html>

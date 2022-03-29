@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Pasien Rawat Jalan</title>
+    <title>Laporan Data Pasien</title>
     <meta name="description" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
@@ -87,10 +87,10 @@
             <!-- Side Header -->
             <div class="content-header bg-white-5">
                 <!-- Logo -->
-                <a class="font-w600 text-dual" href="index.html">
+                <a class="font-w600 text-dual" href="index.php">
                     <i class="fa fa-circle-notch text-primary"></i>
                     <span class="smini-hide">
-                        <span class="font-w700 font-size-h5"> Hi Admin</span>
+                        <span class="font-w700 font-size-h5">Hi Admin</span>
                     </span>
                 </a>
                 <!-- END Logo -->
@@ -100,7 +100,7 @@
             <div class="content-side content-side-full">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="adm_dash.html">
+                        <a class="nav-main-link active" href="adm_dash.php">
                             <span class="nav-main-link-name">Dashboard</span>
                         </a>
                     </li>
@@ -117,15 +117,12 @@
                     <div class="content content-narrow content-full">
                         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-5 text-center text-sm-left">
                             <div class="flex-sm-fill">
-                                <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Pasien Rawat Jalan</h1>
+                                <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Laporan Data Pasien</h1>
                                 <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Klinik Bidan Nyimas</h2>
                             </div>
                             <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
                                 <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                    <a class="btn btn-success px-4 py-2" data-toggle="click-ripple" href="index.html">
-                                        <i class="fa fa-save"></i> Simpan
-                                    </a>
-                                    <a class="btn btn-danger px-4 py-2" data-toggle="click-ripple" href="index.html">
+                                    <a class="btn btn-danger px-4 py-2" data-toggle="click-ripple" href="index.php">
                                         <i class="si si-logout"></i> Logout
                                     </a>
                                 </span>
@@ -186,23 +183,19 @@
                                             08xxxxxxx
                                         </td>
                                         <td class="d-none d-sm-table-cell font-size-sm">
-                                            ANC
+                                            Bersalin
                                         </td>
                                         <td class="d-none d-sm-table-cell font-size-sm">
                                             Mual dan Pusing
                                         </td>
                                         <td class="d-none d-sm-table-cell font-size-sm">
-                                            <button class="btn btn-success">Upload</button> 
+                                            
                                         </td>
                                         <td class="d-none d-sm-table-cell font-size-sm">
-                                            <button class="btn btn-success">Edit</button>
+                                             
                                         </td>
                                         <td class="d-none d-sm-table-cell font-size-sm">
-                                            <select class="form-control" id="example-select" name="example-select">
-                                                <option value="0">Pilih Jenis</option>
-                                                <option value="1">Umum</option>
-                                                <option value="2">BPJS</option>
-                                            </select>
+                                            Umum
                                         </td>
                                     </tr>
                                 </tbody>
@@ -214,10 +207,6 @@
             <!-- END Page Content -->
         </main>
         <!-- END Main Container -->
-        <!-- Footer -->
-        <footer id="page-footer" class="bg-body-light">
-        </footer>
-        <!-- END Footer -->
     </div>
     <!-- END Page Container -->
     <!--
