@@ -1,214 +1,315 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014 - 2019, British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package	CodeIgniter
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
+ * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (https://bcit.ca/)
+ * @license	https://opensource.org/licenses/MIT	MIT License
+ * @link	https://codeigniter.com
+ * @since	Version 1.0.0
+ * @filesource
+ */
 
-<head>
-    <title>Klinik Bidan Nyimas</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="Tooplate">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="assets/css/tooplate-style.css">
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ */
+	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
-    <link rel="shortcut icon" href="assets/images/Logo_Bidan_Nyimas-3.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/Logo_Bidan_Nyimas-3.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/Logo_Bidan_Nyimas-3.png">
-</head>
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
+switch (ENVIRONMENT)
+{
+	case 'development':
+		error_reporting(-1);
+		ini_set('display_errors', 1);
+	break;
 
-<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
-    <!-- PRE LOADER -->
-    <!-- HEADER -->
+	case 'testing':
+	case 'production':
+		ini_set('display_errors', 0);
+		if (version_compare(PHP_VERSION, '5.3', '>='))
+		{
+			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
+		}
+		else
+		{
+			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
+		}
+	break;
 
-    <!-- MENU -->
-    <section class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <!-- lOGO TEXT HERE -->
-                <a class="navbar-brand"></i>Klinik Bidan Nyimas</a>
-            </div>
-            <!-- MENU LINKS -->
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#top" class="smoothScroll">Beranda</a></li>
-                    <li><a href="#appointment" class="#smoothScroll">Daftar Akun</a></li>
-                    <li><a href="#google-map" class="smoothScroll">Kontak</a></li>
-                    <li class="appointment-btn"><a href="#about">Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!-- HOME -->
-    <section id="home" class="slider" data-stellar-background-ratio="0.5">
-        <div class="container">
-            <div class="row">
-                    <div class="item item-first">
-                        <div class="caption">
-                            <div class="col-md-offset-1 col-md-10">
-                                <h3>Selamat Datang Bunda</h3>
-                                <h1>Klinik Bidan Nyimas</h1>
-                                <a href="#about" class="section-btn btn btn-default smoothScroll">Jadwal Bidan</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ABOUT -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="about-info">
-                        <h2 class="wow fadeInUp" data-wow-delay="0.6s">Selamat datang di </i>Klinik Bidan Nyimas</h2>
-                        <div class="wow fadeInUp" data-wow-delay="0.8s">
-                            <p>Hai Bunda, </p>
-                            <p>Terimakasih telah memercayai klinik bidan nyimas untuk menjaga kesehatan bunda dan si buah hati</p>
-                        </div>
-                        <figure class="profile wow fadeInUp" data-wow-delay="1s">
-                            <img src="assets/images/Ibu Dinda.jpeg" class="img-responsive" alt="">
-                            <figcaption>
-                                <h3>Nyimas Hamidayanti Amd.Keb</h3>
-                                <p>Kepala Bidan</p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <!-- CONTACT FORM HERE -->
-                    <form id="appointment-form" role="form" method="post" action="#">
-                        <!-- SECTION TITLE -->
-                        <div class="profile wow fadeInUp" data-wow-delay="1s">
-                            <h2>Login Akun</h2>
-                            <h4>Sudah punya akun? Yuk, login!</h4>
-                        </div>
-                        <div class="wow fadeInUp" data-wow-delay="0.8s">
-                            <div class="col-md-6 col-sm-6">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                            </div>
-                           <div class="col-md-12 col-sm-12">
-                                <a><button type="button" class="btn btn-success btn-lg btn-block">Login</button></a>
-                           </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- MAKE AN APPOINTMENT -->
-    <section id="appointment" data-stellar-background-ratio="3">
-        <div class="container" >
-            <div class="row">
-                <div class="col-md-6 col-sm-8">
-                    <!-- CONTACT FORM HERE -->
-                    <form id="appointment-form" role="form" method="post" action="#">
-                        <!-- SECTION TITLE -->
-                        <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
-                            <h2>Daftar Akun</h2>
-                            <h4>Belum punya akun? Yuk, daftar sekarang!</h4>
-                        </div>
-                        <div class="wow fadeInUp" data-wow-delay="0.8s">
-                            <div class="col-md-6 col-sm-6">
-                                <label for="nama">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap">
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <label for="username">Username</label>
-                                <input type="username" class="form-control" id="username" name="username" placeholder="Username">
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <label for="password">Password</label>
-                                <input type="password" name="password" placeholder="Password" class="form-control">
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <label for="repassword">Ulangi Password</label>
-                                <input type="repassword" name="repassword" placeholder="Ulangi Password" class="form-control">
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <label for="Umur">Umur</label>
-                                <input type="text" class="form-control" id="Umur" name="Umur" placeholder="Umur">
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <label for="Alamat">Alamat</label>
-                                <input type="text" class="form-control" id="Alamat" name="Alamat" placeholder="Alamat" >
-                            </div>
-                            <div class="col-md-12 col-sm-12">
-                                <label for="notelp">Nomor Telepon</label>
-                                <input type="text" class="form-control" id="notelp" name="notelp" placeholder="Nomor Telepon">
-                                <button type="submit" class="btn btn-success btn-lg btn-block"  name="submit">Daftar Akun</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- GOOGLE MAP -->
-    <section id="google-map">
-        <!-- How to change your own map point
-            1. Go to Google Maps
-            2. Click on your location point
-            3. Click "Share" and choose "Embed map" tab
-            4. Copy only URL and paste it within the src="" field below
-     -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d293689.2454127059!2d104.96343285690519!3d-5.4388432602345205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40d18b246dead7%3A0x84828b621fa759c7!2sBPM%20Nyimas!5e0!3m2!1sid!2sid!4v1646914234442!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </section>
-    <!-- FOOTER -->
-    <footer data-stellar-background-ratio="5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-8">
-                    <div class="footer-thumb">
-                        <h4 class="wow fadeInUp" data-wow-delay="0.4s">Info Kontak</h4>
-                        <p>Jl. Poksai, Beringin Raya, </p>
-                        <p>Kec. Kemiling, Kota Bandar Lampung, </p>
-                        <p>35155</p>
-                        <div class="contact-info">
-                            <p><i class="fa fa-phone"></i> 0812-4060-2407</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-8">
-                    <div class="footer-thumb">
-                        <div class="opening-hours">
-                            <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
-                            <p>Senin - Jumat <span>06:00 - 22:00 WIB</span></p>
-                            <p>Sabtu <span>09:00 - 20:00 WIB</span></p>
-                            <p>Minggu <span>Closed</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-sm-12 border-top">
-                    <div class="col-md-12 col-sm-6">
-                        <div class="copyright-text">
-                            <p>Copyright &copy; 2022 Nur Adinda</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- SCRIPTS -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.sticky.js"></script>
-    <script src="assets/js/jquery.stellar.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/smoothscroll.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/custom.js"></script>
-</body>
+	default:
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'The application environment is not set correctly.';
+		exit(1); // EXIT_ERROR
+}
 
-</html>
+/*
+ *---------------------------------------------------------------
+ * SYSTEM DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" directory.
+ * Set the path if it is not in the same directory as this file.
+ */
+	$system_path = 'system';
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * directory than the default one you can set its name here. The directory
+ * can also be renamed or relocated anywhere on your server. If you do,
+ * use an absolute (full) server path.
+ * For more info please see the user guide:
+ *
+ * https://codeigniter.com/user_guide/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ */
+	$application_folder = 'application';
+
+/*
+ *---------------------------------------------------------------
+ * VIEW DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * If you want to move the view directory out of the application
+ * directory, set the path to it here. The directory can be renamed
+ * and relocated anywhere on your server. If blank, it will default
+ * to the standard location inside your application directory.
+ * If you do move this, use an absolute (full) server path.
+ *
+ * NO TRAILING SLASH!
+ */
+	$view_folder = '';
+
+
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here. For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT: If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller. Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ */
+	// The directory name, relative to the "controllers" directory.  Leave blank
+	// if your controller is not in a sub-directory within the "controllers" one
+	// $routing['directory'] = '';
+
+	// The controller class file name.  Example:  mycontroller
+	// $routing['controller'] = '';
+
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
+
+
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
+
+
+
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
+
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
+
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
+
+	if (($_temp = realpath($system_path)) !== FALSE)
+	{
+		$system_path = $_temp.DIRECTORY_SEPARATOR;
+	}
+	else
+	{
+		// Ensure there's a trailing slash
+		$system_path = strtr(
+			rtrim($system_path, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		).DIRECTORY_SEPARATOR;
+	}
+
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your system folder path does not appear to be set correctly. Please open the following file and correct this: '.pathinfo(__FILE__, PATHINFO_BASENAME);
+		exit(3); // EXIT_CONFIG
+	}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+	// Path to the system directory
+	define('BASEPATH', $system_path);
+
+	// Path to the front controller (this file) directory
+	define('FCPATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
+
+	// Name of the "system" directory
+	define('SYSDIR', basename(BASEPATH));
+
+	// The path to the "application" directory
+	if (is_dir($application_folder))
+	{
+		if (($_temp = realpath($application_folder)) !== FALSE)
+		{
+			$application_folder = $_temp;
+		}
+		else
+		{
+			$application_folder = strtr(
+				rtrim($application_folder, '/\\'),
+				'/\\',
+				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+			);
+		}
+	}
+	elseif (is_dir(BASEPATH.$application_folder.DIRECTORY_SEPARATOR))
+	{
+		$application_folder = BASEPATH.strtr(
+			trim($application_folder, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		);
+	}
+	else
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your application folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
+		exit(3); // EXIT_CONFIG
+	}
+
+	define('APPPATH', $application_folder.DIRECTORY_SEPARATOR);
+
+	// The path to the "views" directory
+	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))
+	{
+		$view_folder = APPPATH.'views';
+	}
+	elseif (is_dir($view_folder))
+	{
+		if (($_temp = realpath($view_folder)) !== FALSE)
+		{
+			$view_folder = $_temp;
+		}
+		else
+		{
+			$view_folder = strtr(
+				rtrim($view_folder, '/\\'),
+				'/\\',
+				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+			);
+		}
+	}
+	elseif (is_dir(APPPATH.$view_folder.DIRECTORY_SEPARATOR))
+	{
+		$view_folder = APPPATH.strtr(
+			trim($view_folder, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		);
+	}
+	else
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your view folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
+		exit(3); // EXIT_CONFIG
+	}
+
+	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ */
+require_once BASEPATH.'core/CodeIgniter.php';
