@@ -111,6 +111,7 @@ class Welcome extends CI_Controller {
             redirect(base_url());
         }
 	}
+
 	public function logout(){
 		        $this->session->unset_userdata('admin_login');
         $this->session->unset_userdata('user_login');
