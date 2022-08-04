@@ -53,7 +53,7 @@
                             <div class="col-md-offset-1 col-md-10">
                                 <h3>Selamat Datang Bunda</h3>
                                 <h1>Klinik Bidan Nyimas</h1>
-                                <a href="#about" class="section-btn btn btn-default smoothScroll">Jadwal Bidan</a>
+                                <a href="#google-map" class="section-btn btn btn-default smoothScroll">Jadwal Bidan</a>
                             </div>
                         </div>
                     </div>
@@ -127,11 +127,11 @@
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <label for="username">Username</label>
-                                <input type="username" class="form-control" id="username" name="username" placeholder="Username">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" placeholder="Password" class="form-control">
+                                <input type="text" name="password" placeholder="Password" class="form-control">
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <label for="Umur">Umur</label>
@@ -168,27 +168,38 @@
     <footer data-stellar-background-ratio="5">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-8">
-                    <div class="footer-thumb">
-                        <h4 class="wow fadeInUp" data-wow-delay="0.4s">Info Kontak</h4>
-                        <p>Jl. Poksai, Beringin Raya, </p>
-                        <p>Kec. Kemiling, Kota Bandar Lampung, </p>
-                        <p>35155</p>
-                        <div class="contact-info">
-                            <p><i class="fa fa-phone"></i> 0812-4060-2407</p>
-                        </div>
+                <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb"> 
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Alamat</h4>
+                              <p>Jl. Poksai, Beringin Raya, </p>
+                              <p>Kec. Kemiling, Kota Bandar Lampung, </p>
+                              <p>35155</p>
+                            <div class="contact-info">
+                                <p><i class="fa fa-phone"></i> 0812-4060-2407</p>
+                            </div>
+                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-sm-8">
-                    <div class="footer-thumb">
-                        <div class="opening-hours">
-                            <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
-                            <p>Senin - Jumat <span>06:00 - 22:00 WIB</span></p>
-                            <p>Sabtu <span>09:00 - 20:00 WIB</span></p>
-                            <p>Minggu <span>Closed</span></p>
-                        </div>
+
+                    <div class="col-md-4 col-sm-4"> 
+                         <div class="footer-thumb"> 
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Jenis Pelayanan</h4>
+                              <p>Bersalin</p>
+                              <p>KB</p>
+                              <p>Imunisasi</p>
+                              <p>Pemeriksaan Kehamilan</p>
+                         </div>
                     </div>
-                </div>
+
+                    <div class="col-md-4 col-sm-4"> 
+                         <div class="footer-thumb">
+                              <div class="opening-hours">
+                                <h4 class="wow fadeInUp" data-wow-delay="0.4s">Jam Kerja</h4>
+                                <p>Setiap Hari <span>06:00 - 20:00 WIB</span></p>
+                              </div> 
+                         </div>
+                    </div>
+
+                
                 <div class="col-md-12 col-sm-12 border-top">
                     <div class="col-md-12 col-sm-6">
                         <div class="copyright-text">

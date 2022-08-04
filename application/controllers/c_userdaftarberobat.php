@@ -5,8 +5,7 @@ class c_userdaftarberobat extends CI_Controller {
 		public function __construct()
     {
 		parent::__construct();		
-		$this->load->model('m_userdaftarberobat');
-		$this->load->model('m_pelayanan');		
+		$this->load->model('m_userdaftarberobat');	
 		$this->load->helper('url');
     }
 
@@ -30,12 +29,7 @@ class c_userdaftarberobat extends CI_Controller {
 			'jenis_perawatan' => $jenis_perawatan,
 			'tgl_berobat' => $tgl_berobat
 			);
-		$data1 = array(
-			'jenis_perawatan' => $jenis_perawatan,
-			'tgl_berobat' => $tgl_berobat
-			);		
-		$this->db->insert('pendaftaran',$data);
-		$this->db->insert('pelayanan',$data1);		
+		$this->db->insert('berobat',$data);
 		redirect('c_usrdash');
 	}	
 

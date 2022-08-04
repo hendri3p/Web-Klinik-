@@ -43,8 +43,7 @@
             <!-- Side Header -->
             <div class="content-header bg-white-5">
                 <!-- Logo -->
-                <a class="font-w600 text-dual" href="index.html">
-                    <i class="fa fa-circle-notch text-primary"></i>
+                <a class="font-w600 text-dual" >
                     <span class="smini-hide">
                         <span class="font-w700 font-size-h5">Selamat Datang</span> 
                     </span>
@@ -56,8 +55,11 @@
             <div class="content-side content-side-full">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="usr_dash.html">
-                            <span class="nav-main-link-name">Dashboard</span>
+                        <a class="nav-main-link active" href="c_usrdash">
+                            <span class="nav-main-link-name font-size-h6">Dashboard</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_userdaftarberobat'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Daftar Berobat</span>
                         </a>
                     </li>
                 </ul>
@@ -76,13 +78,6 @@
                                 <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Pendaftaran Berobat</h1>
                                 <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Klinik Bidan Nyimas</h2>
                             </div>
-                            <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
-                                <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                    <a class="btn btn-danger btn-lg btn-block" data-toggle="click-ripple" href="index.html">
-                                        <i class="si si-logout"></i> Logout
-                                    </a>
-                                </span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -97,7 +92,6 @@
                             <h3 class="block-title">Form Pendaftaran Berobat</h3>
                         </div>
                         <div class="block-content block-content-full">
-                            <?= $this->session->flashdata('message'); ?>
                             <form action="<?= base_url('c_userdaftarberobat/daftar'); ?>" method="post">
                                 <div class="row push">
                                     <div class="col-lg-4">

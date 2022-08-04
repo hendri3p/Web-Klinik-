@@ -39,9 +39,8 @@
             <div class="content-header bg-white-5">
                 <!-- Logo -->
                 <a class="font-w600 text-dual">
-                    <i class="fa fa-circle-notch text-primary"></i>
                     <span class="smini-hide">
-                        <span class="font-w700 font-size-h5">Hi Admin</span> 
+                        <span class="font-w700 font-size-h5">Halaman Admin</span> 
                     </span>
                     
                 </a>
@@ -52,8 +51,17 @@
             <div class="content-side content-side-full">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="adm_dash.html">
-                            <span class="nav-main-link-name">Dashboard</span>
+                        <a class="nav-main-link active" href="<?= base_url('c_admdash'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Dashboard</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_admrawatjalan'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Rawat Jalan</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_admrawatinap'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Rawat Inap</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_admdatapasien'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Laporan Data Pasien</span>
                         </a>
                     </li>
                 </ul>
@@ -126,7 +134,7 @@
                                 <div class="bg-image" style="background-color: #1f939b;">
                                     <div class="block-content block-content-full bg-black-50 ribbon ribbon-glass">
                                         <div class="text-center py-6">
-                                            <h3 class="text-white mb-0">Data Pasien</h3>
+                                            <h3 class="text-white mb-0">Laporan Data Pasien</h3>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
                                             <a href="<?= base_url('c_admdatapasien'); ?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>

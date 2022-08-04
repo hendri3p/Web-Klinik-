@@ -5,7 +5,11 @@ class m_auth extends CI_Model{
   {
         parent::__construct();
   }
- 
+  
+  function cek_login($table,$where){		
+		return $this->db->get_where($table,$where);
+	}	
+
   function register($username,$password,$nama_user, $umur, $alamat, $no_telp){
     $data_user = array(
       'username'=>$username,

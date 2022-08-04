@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Pasien Rawat Inap</title>
+    <title>Rekam Medis Pasien</title>
     <meta name="description" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
@@ -34,7 +34,6 @@
     <!-- Page Container -->
 
     <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
-    
         <!-- Sidebar -->
 
         <nav id="sidebar" aria-label="Main Navigation">
@@ -43,7 +42,7 @@
                 <!-- Logo -->
                 <a class="font-w600 text-dual" href="index.html">
                     <span class="smini-hide">
-                        <span class="font-w700 font-size-h5">Hi Admin</span>
+                        <span class="font-w700 font-size-h5">Selamat Datang</span>
                     </span>
                 </a>
                 <!-- END Logo -->
@@ -53,17 +52,11 @@
             <div class="content-side content-side-full">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="adm_dash.html">
-                            <span class="nav-main-link-name">Dashboard</span>
+                        <a class="nav-main-link active" href="c_usrdash">
+                            <span class="nav-main-link-name font-size-h6">Dashboard</span>
                         </a>
-                        <a class="nav-main-link active" href="<?= base_url('c_admrawatjalan'); ?>">
-                            <span class="nav-main-link-name font-size-h6">Rawat Jalan</span>
-                        </a>
-                        <a class="nav-main-link active" href="<?= base_url('c_admrawatinap'); ?>">
-                            <span class="nav-main-link-name font-size-h6">Rawat Inap</span>
-                        </a>
-                        <a class="nav-main-link active" href="<?= base_url('c_admdatapasien'); ?>">
-                            <span class="nav-main-link-name font-size-h6">Laporan Data Pasien</span>
+                        <a class="nav-main-link active" href="<?= base_url('c_userdaftarberobat'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Daftar Berobat</span>
                         </a>
                     </li>
                 </ul>
@@ -79,7 +72,7 @@
                     <div class="content content-narrow content-full">
                         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-5 text-center text-sm-left">
                             <div class="flex-sm-fill">
-                                <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Pasien Rawat Inap</h1>
+                                <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Rekam Medis Pasien</h1>
                                 <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Klinik Bidan Nyimas</h2>
                             </div>
                         </div>
@@ -89,25 +82,27 @@
             <!-- END Hero -->
             <!-- Page Content -->
             <div class="content">
-            <div class="row" style="margin-top: 50px">
-                <div class="col-xs-4 col-xs-offset-4">
-                    <form action="" method="GET">
-                        <div class="input-group">
-                            <input type="date" name="tgl_berobat" class="form-control ml-3">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="submit" value="Cari">Cari</button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </div>
             <!-- Dynamic Table Full -->
             <div class="block">
                 <div class="block-content block-content-full">
+                    <form action="" method="GET">
+                    <div class="row" style="margin-bottom: 4px">
+                        <div class="col-xs-4 col-xs-offset-4">
+                            <form action="" method="GET">
+                                <div class="input-group">
+                                    <input type="date" name="tgl_berobat" class="form-control ml-3">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="submit" value="Cari">Cari</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    </form>
                     <table class="table table-bordered table-responsive table-striped table-vcenter js-dataTable-full">
                         <thead>
                             <tr>
-                                <th>No</th>
+                                <th class="text-center" style="width: 80px;">No</th>
                                 <th>Tanggal</th>
                                 <th>NIK</th>
                                 <th>Nama Pasien</th>
@@ -120,7 +115,7 @@
                                 <th>Resep Obat</th>
                                 <th>Hasil Diagnosa</th>
                                 <th>Pembayaran</th>
-                                <th>Aksi</th>
+                            </tr>
                         </thead>
                         <?php
                         $no = 1;
@@ -131,39 +126,27 @@
                                     <td><?php echo $no++ ?></td>
                                     <td><?php echo $pas['tgl_berobat'] ?></td>
                                     <td><?php echo $pas['nik'] ?></td>
-                                    <td><?php echo $pas['nama_user']?></td>
+                                    <td><?php echo $pas['nama_user'] ?></td>
                                     <td><?php echo $pas['umur'] ?></td>
                                     <td><?php echo $pas['alamat'] ?></td>
                                     <td><?php echo $pas['no_telp'] ?></td>
                                     <td><?php echo $pas['jenis_perawatan'] ?></td>
                                     <td><?php echo $pas['riwayat_penyakit'] ?></td>
-                                    <td><?php echo $pas['keluhan'] ?></td><td>
-                                        <?php if ($pas['obat'] != '-') { ?>
-                                            <a href="<?= base_url('') ?>/assets/file_upload/<?php echo $pas['obat'] ?>" class="btn btn-success">Download</a>
-                                        <?php } else { ?>
-                                            <?php echo $pas['obat'] ?>
-                                        <?php } ?>
-                                    </td>
+                                    <td><?php echo $pas['keluhan'] ?></td>
+                                    <td><?php echo $pas['obat'] ?></td>
                                     <td><?php echo $pas['hasil_diagnosa'] ?></td>
                                     <td><?php echo $pas['pembayaran'] ?></td>
-                                    <td>
-                                        <?php echo anchor('c_admrawatinap/edit/' . $pas['id_berobat'], 'Edit'); ?>
-                                        <?php echo anchor('c_admrawatinap/hapus/' . $pas['nik'], 'Hapus'); ?>
-                                    </td>
                                 </tr>
                             </tbody>
                         <?php } ?>
                     </table>
                 </div>
-                    <!-- END Dynamic Table Full -->                
             </div>
+            <!-- END Dynamic Table Full -->
+        </div>
             <!-- END Page Content -->
         </main>
         <!-- END Main Container -->
-        <!-- Footer -->
-        <footer id="page-footer" class="bg-body-light">
-        </footer>
-        <!-- END Footer -->
     </div>
     <!-- END Page Container -->
 

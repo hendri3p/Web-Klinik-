@@ -50,8 +50,11 @@
             <div class="content-side content-side-full">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="usr_dash.html">
-                            <span class="nav-main-link-name">Dashboard</span>
+                        <a class="nav-main-link active" href="c_usrdash">
+                            <span class="nav-main-link-name font-size-h6">Dashboard</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_userdaftarberobat'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Daftar Berobat</span>
                         </a>
                     </li>
                 </ul>
@@ -119,6 +122,21 @@
                             </div>
                         </div>
                         <!-- END Glass on Background Image -->
+                        <div class="col-md-6">
+                            <!-- Glass on Background Image -->
+                            <div class="block">
+                                <div class="bg-image" style="background-color: #1f939b;">
+                                    <div class="block-content block-content-full bg-black-50 ribbon ribbon-glass">
+                                        <div class="text-center py-6">
+                                            <h3 class="text-white mb-0">Rekam Medis Pasien</h3>
+                                        </div>
+                                        <div class="col-md-12 col-sm-12">
+                                            <a href="<?= base_url('c_admdatapasien'); ?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                     
                     </div>
                 </div>
                 <!-- END Simple Ribbon -->

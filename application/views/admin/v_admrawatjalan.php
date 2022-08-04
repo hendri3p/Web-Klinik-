@@ -40,7 +40,6 @@
             <div class="content-header bg-white-5">
                 <!-- Logo -->
                 <a class="font-w600 text-dual" href="index.html">
-                    <i class="fa fa-circle-notch text-primary"></i>
                     <span class="smini-hide">
                         <span class="font-w700 font-size-h5"> Hi Admin</span>
                     </span>
@@ -52,8 +51,17 @@
             <div class="content-side content-side-full">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="adm_dash.html">
-                            <span class="nav-main-link-name">Dashboard</span>
+                        <a class="nav-main-link active" href="<?= base_url('c_admdash'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Dashboard</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_admrawatjalan'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Rawat Jalan</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_admrawatinap'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Rawat Inap</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_admdatapasien'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Laporan Data Pasien</span>
                         </a>
                     </li>
                 </ul>
@@ -72,16 +80,6 @@
                                 <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Pasien Rawat Jalan</h1>
                                 <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Klinik Bidan Nyimas</h2>
                             </div>
-                            <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
-                                <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                    <a class="btn btn-success px-4 py-2" data-toggle="click-ripple" href="index.html">
-                                        <i class="fa fa-save"></i> Simpan
-                                    </a>
-                                    <a class="btn btn-danger px-4 py-2" data-toggle="click-ripple" href="index.html">
-                                        <i class="si si-logout"></i> Logout
-                                    </a>
-                                </span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,116 +87,75 @@
             <!-- END Hero -->
             <!-- Page Content -->
             <div class="content">
-                    <!-- Dynamic Table Full -->
-                    <div class="block">
-                        <div class="block-content block-content-full">
-                            <div class="form-group">
-                                <label for="tgl">Daftar Antrian Pasien</label>
-                                <p></p>
-                                <input type="date" class="btn btn-light" id="tgl" name="tgl" placeholder="Tanggal Berobat">
-                                
-                                <select class="btn btn-light" id="example-select" name="example-select">
-                                    <option value="0">Pilih Jenis Perawatan</option>
-                                    <option value="1">Bersalin</option>
-                                    <option value="2">KB</option>
-                                    <option value="3">Imunisasi</option>
-                                    <option value="4">Pemeriksaan Kehamilan</option>
-                                </select>
-                            </div>
-                            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
-                            <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center" style="width: 80px;">Tgl</th>
-                                        <th>Nama</th>
-                                        <th>Umur</th>
-                                        <th>Alamat</th>
-                                        <th>No.HP</th>
-                                        <th>Pelayanan</th>
-                                        <th>Keluhan</th>
-                                        <th>Obat</th>
-                                        <th>Hasil Diagnosa</th>
-                                        <th>Pembayaran</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr>
-                                        <td class="text-center font-size-sm">10</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Umi</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            35
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            Kemiling
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            08xxxxxxx
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            ANC
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            Mual dan Pusing
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            <button class="btn btn-success">Upload</button> 
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            <a data-toggle="modal" data-target="#edit-data"><button class="btn btn-success">Edit</button></a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            <select class="form-control" id="example-select" name="example-select">
-                                                <option value="0">Pilih Jenis</option>
-                                                <option value="1">Umum</option>
-                                                <option value="2">BPJS</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+            
+            <!-- Dynamic Table Full -->
+            <div class="block">
+                <div class="block-content block-content-full">
+                    <div class="row" style="margin-bottom: 4px">
+                        <div class="col-xs-4 col-xs-offset-4">
+                            <form action="" method="GET">
+                                <div class="input-group">
+                                    <input type="date" name="tgl_berobat" class="form-control ml-3">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="submit" value="Cari">Cari</button>
+                                    </span>
+                                </div>
+                            </form>
                         </div>
-<!-- Modal Tambah -->
- <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-data" class="modal fade">
-     <div class="modal-dialog">
-         <div class="modal-content">
-             <div class="modal-header">
-                 <h4 class="modal-title">Edit Data</h4>
-             </div>
-             <form class="form-horizontal" action="<?php echo base_url('admin/tambah')?>" method="post" enctype="multipart/form-data" role="form">
-              <div class="modal-body">
-                      <div class="form-group">
-                          <label class="col-lg-2 col-sm-2 control-label">Nama</label>
-                          <div class="col-lg-10">
-                              <input type="text" class="form-control" name="nama" placeholder="Tuliskan Nama">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label class="col-lg-2 col-sm-2 control-label">Alamat</label>
-                          <div class="col-lg-10">
-                           <textarea class="form-control" name="alamat" placeholder="Tuliskan Alamat"></textarea>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label class="col-lg-2 col-sm-2 control-label">Pekerjaan</label>
-                          <div class="col-lg-10">
-                              <input type="text" class="form-control" name="pekerjaan" placeholder="Tuliskan Pekerjaan">
-                          </div>
-                      </div>
-                  </div>
-                  <div class="modal-footer">
-                      <button class="btn btn-info" type="submit"> Simpan&nbsp;</button>
-                      <button type="button" class="btn btn-warning" data-dismiss="modal"> Batal</button>
-                  </div>
-                 </form>
-             </div>
-         </div>
-     </div>
- </div>
- <!-- END Modal Tambah -->                        
                     </div>
+                    <table class="table table-bordered table-responsive table-striped table-vcenter js-dataTable-full">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Tanggal</th>
+                                <th>NIK</th>
+                                <th>Nama Pasien</th>
+                                <th>Umur</th>
+                                <th>Alamat</th>
+                                <th>No.Hp</th>
+                                <th>Pelayanan</th>
+                                <th>Riwayat Penyakit</th>
+                                <th>Keluhan</th>
+                                <th>Resep Obat</th>
+                                <th>Hasil Diagnosa</th>
+                                <th>Pembayaran</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <?php
+                        $no = 1;
+                        foreach ($pasien as $pas) {
+                        ?>
+                            <tbody>
+                                <tr>
+                                <td><?php echo $no++ ?></td>
+                                    <td><?php echo $pas['tgl_berobat'] ?></td>
+                                    <td><?php echo $pas['nik'] ?></td>
+                                    <td><?php echo $pas['nama_user']?></td>
+                                    <td><?php echo $pas['umur'] ?></td>
+                                    <td><?php echo $pas['alamat'] ?></td>
+                                    <td><?php echo $pas['no_telp'] ?></td>
+                                    <td><?php echo $pas['jenis_perawatan'] ?></td>
+                                    <td><?php echo $pas['riwayat_penyakit'] ?></td>
+                                    <td><?php echo $pas['keluhan'] ?></td><td>
+                                        <?php if ($pas['obat'] != '-') { ?>
+                                            <a href="<?= base_url('') ?>/assets/file_upload/<?php echo $pas['obat'] ?>" class="btn btn-success">Download</a>
+                                        <?php } else { ?>
+                                            <?php echo $pas['obat'] ?>
+                                        <?php } ?>
+                                    </td>
+                                    <td><?php echo $pas['hasil_diagnosa'] ?></td>
+                                    <td><?php echo $pas['pembayaran'] ?></td>
+                                    <td>
+                                        <?php echo anchor('c_admrawatinap/edit/' . $pas['id_berobat'], 'Edit'); ?>
+                                        <?php echo anchor('c_admrawatinap/hapus/' . $pas['nik'], 'Hapus'); ?>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        <?php } ?>
+                    </table>
+                </div>  
+            </div>
                     <!-- END Dynamic Table Full -->                
             </div>
             <!-- END Page Content -->

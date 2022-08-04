@@ -12,10 +12,10 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		        // Cek apakah sudah login atau belum?
-        if ($this->session->userdata('admin_login')) {
+        if ($this->session->userdata('user_login')) {
             redirect('c_admdash');
         }
-        if ($this->session->userdata('user_login')) {
+        if ($this->session->userdata('pasien_login')) {
             redirect('c_usrdash');
         }
 
@@ -64,18 +64,16 @@ class Welcome extends CI_Controller {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        $admin = $this->db->get_where('admin', ['username' => $username])->row_array();
         $user = $this->db->get_where('user', ['username' => $username])->row_array();
+        $pasien = $this->db->get_where('pasien', ['username' => $username])->row_array();
 
 
-        if ($admin)
+        if ($user)
         {
-            if ($password == $admin['password'])
+            if ($password == $user['password'])
             {
                 $data = [
-                    'admin_login' => $admin['username'],
-
-                    
+                'user_login' => $user['username'],
                 ];
                 $this->session->set_userdata($data);
                 redirect('c_admdash');
@@ -87,12 +85,12 @@ class Welcome extends CI_Controller {
             }
         }
 
-     else if ($user)
+     else if ($pasien)
         {
-            if ($password == $user['password'])
+            if ($password == $pasien['password'])
             {
                 $data = [
-                    'user_login' => $user['username']
+                    'pasien_login' => $pasien['username']
                 ];
                 $this->session->set_userdata($data);
                 redirect('c_usrdash');
@@ -113,10 +111,10 @@ class Welcome extends CI_Controller {
 	}
 
 	public function logout(){
-		        $this->session->unset_userdata('admin_login');
-        $this->session->unset_userdata('user_login');
-        $this->session->set_flashdata('message','<div class="alert alert-success" role="alert"> Berhasil Keluar! </div>');
-            redirect(base_url());
+		        $this->session->unset_userdata('user_login');
+                $this->session->unset_userdata('pasien_login');
+                $this->session->set_flashdata('message','<div class="alert alert-success" role="alert"> Berhasil Keluar! </div>');
+                redirect(base_url());
 	}
 	
 }
