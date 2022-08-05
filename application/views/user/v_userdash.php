@@ -56,6 +56,9 @@
                         <a class="nav-main-link active" href="<?= base_url('c_userdaftarberobat'); ?>">
                             <span class="nav-main-link-name font-size-h6">Daftar Berobat</span>
                         </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_usrrekammedis'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Rekam Medis</span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -131,7 +134,7 @@
                                             <h3 class="text-white mb-0">Rekam Medis Pasien</h3>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <a href="<?= base_url('c_admdatapasien'); ?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
+                                            <a href="<?= base_url('c_usrrekammedis'); ?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
                                         </div>
                                     </div>
                                 </div>

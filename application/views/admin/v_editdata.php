@@ -35,76 +35,106 @@
 </head>
 
 <body>
-    <!-- Main Container -->
-    <main id="main-container">
-        <!-- Hero -->
-        <div class="bg-image overflow-hidden" style="background-image: url('<?= base_url(''); ?>/assets/images/nakes.jpg');">
-            <div class="bg-primary-dark-op">
-                <div class="content content-narrow content-full">
-                    <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-8 text-center text-sm-left">
-                        <div class="flex-sm-fill">
-                            <h1 class="font-w600 text-white mb-2 " data-toggle="appear" data-timeout="250">Pendaftaran Pasien</h1>
-                        </div>
-                        <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
-                            <span class="" data-toggle="appear" data-timeout="350">
-                                <a class="btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_bpjs'); ?>">
-                                    <i class="si si-home"></i> Kembali
-                                </a>
-                            </span>
+    <!-- Page Container -->
+
+    <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
+        <!-- Sidebar -->
+
+        <nav id="sidebar" aria-label="Main Navigation">
+            <!-- Side Header -->
+            <div class="content-header bg-white-5">
+                <!-- Logo -->
+                <a class="font-w600 text-dual" href="index.html">
+                    <span class="smini-hide">
+                        <span class="font-w700 font-size-h5">Halaman Admin</span> 
+                    </span>
+                </a>
+                <!-- END Logo -->
+            </div>
+            <!-- END Side Header -->
+            <!-- Side Navigation -->
+            <div class="content-side content-side-full">
+                <ul class="nav-main">
+                    <li class="nav-main-item">
+                        <a class="nav-main-link active" href="<?= base_url('c_admdash'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Dashboard</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_admrawatjalan'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Rawat Jalan</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_admrawatinap'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Rawat Inap</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_admdatapasien'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Laporan Data Pasien</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_daftarberobat'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Daftar Berobat</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END Side Navigation -->
+        </nav>
+        <!-- Main Container -->
+        <main id="main-container">
+            <!-- Hero -->
+            <div class="bg-image overflow-hidden" style="background-image: url('assets/images/slider3.jpg');">
+                <div class="bg-primary-dark-op">
+                    <div class="content content-narrow content-full">
+                        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-5 text-center text-sm-left">
+                            <div class="flex-sm-fill">
+                                <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Edit Data Pasien</h1>
+                                <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Klinik Bidan Nyimas</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- END Hero -->
-        <!-- Page Content -->
-        <div class="content content-narrow">
-            <div class="content">
-                <!-- Basic -->
-                <div class="block">
-                    <div class="block-header">
-                        <h3 class="block-title"></h3>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <form action="<?= base_url('C_bpjs/update_data/'); ?><?= $berobat['id_berobat'] ?>" method="POST" enctype="multipart/form-data">
-                            <div class="row push">
-                                <div class="col-lg-4">
-                                </div>
-                                <div class="col-lg-8 col-xl-5">
-                                    <div class="form-group">
-                                        <label for="no_kk">Diagnosa</label>
-                                        <input type="text" class="form-control" name="diagnosa" id="diagnosa" value="<?= $berobat['diagnosa'] ?>">
+            <!-- END Hero -->
+            <!-- Page Content -->
+            <div class="content content-narrow">
+                <div class="content">
+                    <!-- Basic -->
+                    <div class="block">
+                        <div class="block-header">
+                            <h3 class="block-title"></h3>
+                        </div>
+                        <div class="block-content block-content-full">
+                            <form action="<?= base_url('C_bpjs/update_data/'); ?><?= $berobat['id_berobat'] ?>" method="POST" enctype="multipart/form-data">
+                                <div class="row push">
+                                    <div class="col-lg-4">
                                     </div>
-                                    <div class="form-group">
-                                        <?php if ($berobat['hasil_lab'] != '-') { ?>
-                                            <label for="no_kk">Hasil Lab <a href="<?= base_url('') ?>/assets/file_upload/<?= $berobat['hasil_lab'] ?>" class="btn btn-success">Download</a> </label>
-                                        <?php } else { ?>
-                                            <label for="no_kk">Hasil Lab</label>
-                                        <?php } ?>
-                                        <input type="file" name="hasil_lab" class="form-control" id="hasil_lab">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nik">Rujukan</label>
-                                        <input type="text" name="rujukan" class="form-control" id="rujukan" value="<?= $berobat['rujukan'] ?>">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nik">Resep Obat</label>
-                                        <input type="text" class="form-control" name="jenis_obat" id="jenis_obat" value="<?= $berobat['jenis_obat'] ?>">
-                                    </div>
-                                    <div class="col-md-12 col-sm-12">
-                                        <button type="submit" class="btn btn-success btn-lg btn-block">Edit</button>
+                                    <div class="col-lg-8 col-xl-5">
+                                        <div class="form-group">
+                                            <label for="nik">Resep Obat</label>
+                                            <input type="file" name="obat" class="form-control" id="obat">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nik">Hasil Diagnosa</label>
+                                            <input type="text" class="form-control" name="hasil_diagnosa" id="hasil_diagnosa" value="<?= $berobat['hasil_diagnosa'] ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nik">Pembayaran</label>
+                                            <input type="text" name="pembayaran" class="form-control" id="pembayaran" value="<?= $berobat['pembayaran'] ?>">
+                                        </div>
+                                        <div class="col-md-12 col-sm-12">
+                                            <button type="submit" class="btn btn-success btn-lg btn-block">Simpan</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
+                </div>
+            </div>
                     <!-- END Page Content -->
-    </main>
-    <!-- END Main Container -->
-    <!-- Footer -->
-    <footer id="page-footer" class="bg-body-light">
-    </footer>
-    <!-- END Footer -->
+        </main>
+        <!-- END Main Container -->
+        <!-- Footer -->
+        <footer id="page-footer" class="bg-body-light">
+        </footer>
+        <!-- END Footer -->
     </div>
 
 

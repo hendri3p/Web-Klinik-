@@ -74,7 +74,9 @@ class Welcome extends CI_Controller {
             {
                 $data = [
                 'user_login' => $user['username'],
+                'status' => "login"
                 ];
+            
                 $this->session->set_userdata($data);
                 redirect('c_admdash');
             }
@@ -90,8 +92,10 @@ class Welcome extends CI_Controller {
             if ($password == $pasien['password'])
             {
                 $data = [
-                    'pasien_login' => $pasien['username']
+                    'pasien_login' => $pasien['username'],
+                    'status' => "login"
                 ];
+                
                 $this->session->set_userdata($data);
                 redirect('c_usrdash');
             }

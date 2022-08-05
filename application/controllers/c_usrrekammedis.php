@@ -1,15 +1,15 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_pasien extends CI_Controller
+class c_usrrekammedis extends CI_Controller
 {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('M_rekammedis');
+		$this->load->model('m_laporandatapasien');
 
 		if ($this->session->userdata('status') != "login") {
-			redirect(base_url("C_login"));
+			redirect(base_url("Welcome"));
 		}
 	}
 
@@ -17,12 +17,11 @@ class C_pasien extends CI_Controller
 	{
 		$login = $this->session->userdata('pasien_login');
 		$data['login'] = $login;
-		$data['pasien'] = $this->M_rekammedis->joindatapasien($login);
+		$data['pasien'] = $this->m_laporandatapasien->joindatapasien($login);
 		$data['tgl_berobat'] = $this->input->get('tgl_berobat');
-		$data['jenis_poli'] = $this->input->get('jenis_poli');
 		if (!empty($this->input->get('tgl_berobat'))) {
-			$data['pasien'] = $this->M_rekammedis->search_join($data['tgl_berobat'], $data['jenis_poli']);
+			$data['pasien'] = $this->m_laporandatapasien->search_join($data['tgl_berobat']);
 		}
-		$this->load->view('pasien/V_pasien', $data);
+		$this->load->view('user/v_rekammedis', $data);
 	}
 }

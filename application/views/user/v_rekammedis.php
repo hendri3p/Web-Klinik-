@@ -58,6 +58,9 @@
                         <a class="nav-main-link active" href="<?= base_url('c_userdaftarberobat'); ?>">
                             <span class="nav-main-link-name font-size-h6">Daftar Berobat</span>
                         </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_usrrekammedis'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Rekam Medis</span>
+                        </a>
                     </li>
                 </ul>
             </div>

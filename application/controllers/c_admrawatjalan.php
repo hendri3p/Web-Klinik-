@@ -16,6 +16,8 @@ class c_admrawatjalan extends CI_Controller {
 	
 	public function index()
 	{
+		$login = $this->session->userdata('user_login');
+		$data['login'] = $login;
 		$data['pasien'] = $this->m_laporandatapasien->joindata();
 		$data['tgl_berobat'] = $this->input->get('tgl_berobat');
 			if (!empty($this->input->get('tgl_berobat'))) {
@@ -29,7 +31,7 @@ class c_admrawatjalan extends CI_Controller {
 		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 		$where = array('id_daftar' => $id_daftar);
 		$data['berobat'] = $this->M_berobat->edit_data($where, 'berobat')->row_array();
-		$this->load->view('V_editdata', $data);
+		$this->load->view('admin/v_editdata', $data);
 	}
 
 	// public function update_data($id_berobat)

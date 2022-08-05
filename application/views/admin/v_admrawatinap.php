@@ -43,7 +43,7 @@
                 <!-- Logo -->
                 <a class="font-w600 text-dual" href="index.html">
                     <span class="smini-hide">
-                        <span class="font-w700 font-size-h5">Hi Admin</span>
+                        <span class="font-w700 font-size-h5">Halaman Admin</span>
                     </span>
                 </a>
                 <!-- END Logo -->
@@ -53,8 +53,8 @@
             <div class="content-side content-side-full">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="adm_dash.html">
-                            <span class="nav-main-link-name">Dashboard</span>
+                        <a class="nav-main-link active" href="<?= base_url('c_admdash'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Dashboard</span>
                         </a>
                         <a class="nav-main-link active" href="<?= base_url('c_admrawatjalan'); ?>">
                             <span class="nav-main-link-name font-size-h6">Rawat Jalan</span>
@@ -64,6 +64,9 @@
                         </a>
                         <a class="nav-main-link active" href="<?= base_url('c_admdatapasien'); ?>">
                             <span class="nav-main-link-name font-size-h6">Laporan Data Pasien</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_daftarberobat'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Daftar Berobat</span>
                         </a>
                     </li>
                 </ul>

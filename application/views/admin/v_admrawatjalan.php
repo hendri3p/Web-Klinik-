@@ -41,7 +41,7 @@
                 <!-- Logo -->
                 <a class="font-w600 text-dual" href="index.html">
                     <span class="smini-hide">
-                        <span class="font-w700 font-size-h5"> Hi Admin</span>
+                        <span class="font-w700 font-size-h5">Halaman Admin</span>
                     </span>
                 </a>
                 <!-- END Logo -->
@@ -62,6 +62,9 @@
                         </a>
                         <a class="nav-main-link active" href="<?= base_url('c_admdatapasien'); ?>">
                             <span class="nav-main-link-name font-size-h6">Laporan Data Pasien</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_daftarberobat'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Daftar Berobat</span>
                         </a>
                     </li>
                 </ul>
