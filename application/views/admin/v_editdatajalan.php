@@ -101,7 +101,7 @@
                             <h3 class="block-title"></h3>
                         </div>
                         <div class="block-content block-content-full">
-                            <form action="<?= base_url('C_bpjs/update_data/'); ?><?= $berobat['id_berobat'] ?>" method="POST" enctype="multipart/form-data">
+                            <form action="<?= base_url('c_admrawatjalan/update_data/'); ?><?= $berobat['id_berobat'] ?>" method="POST" enctype="multipart/form-data">
                                 <div class="row push">
                                     <div class="col-lg-4">
                                     </div>

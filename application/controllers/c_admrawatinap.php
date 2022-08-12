@@ -31,7 +31,7 @@ class c_admrawatinap extends CI_Controller {
 		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 		$where = array('id_berobat' => $id_berobat);
 		$data['berobat'] = $this->m_berobat->edit_data($where, 'berobat')->row_array();
-		$this->load->view('admin/v_editdata', $data);
+		$this->load->view('admin/v_editdatainap', $data);
 	}
 
 	public function update_data($id_berobat)
@@ -45,8 +45,8 @@ class c_admrawatinap extends CI_Controller {
 			if (!$this->upload->do_upload('obat')) {
 				$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 				$where = array('id_berobat' => $id_berobat);
-				$data['berobat'] = $this->M_berobat->edit_data($where, 'berobat')->row_array();
-				$this->load->view('admin/v_editdata', $data);
+				$data['berobat'] = $this->m_berobat->edit_data($where, 'berobat')->row_array();
+				$this->load->view('admin/v_editdatainap', $data);
 				// input database
 			} else {
 				$upload_image = array('upload_data' => $this->upload->data());
@@ -66,7 +66,7 @@ class c_admrawatinap extends CI_Controller {
 				$data = array(
 					'hasil_diagnosa' => $hasil_diagnosa,
 					'obat'      => $upload_image['upload_data']['file_name'],
-					'pembayaran' => $rujukan,
+					'pembayaran' => $pembayaran,
 				);
 				$where = array(
 					'id_berobat' => $id_berobat
@@ -82,14 +82,14 @@ class c_admrawatinap extends CI_Controller {
 
 			$data = array(
 				'hasil_diagnosa' => $hasil_diagnosa,
-				'pembayaran' => $pembayaran,
 				'obat' => $obat,
+				'pembayaran' => $pembayaran,
 			);
 			$where = array(
 				'id_berobat' => $id_berobat
 			);
 
-			$this->M_berobat->update_data($where, $data, 'berobat');
+			$this->m_berobat->update_data($where, $data, 'berobat');
 			redirect('c_admrawatinap/index');
 		}
 	}

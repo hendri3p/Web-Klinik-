@@ -118,7 +118,7 @@
                                             <h3 class="text-white mb-0">Kartu Berobat</h3>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <a href="usr_dash.html"><button type="button" class="btn btn-success btn-lg btn-block">Unduh</button></a>
+                                            <a href="<?= base_url('c_cetak');?>"><button type="button" class="btn btn-success btn-lg btn-block">Unduh</button></a>
                                         </div>
                                     </div>
                                 </div>

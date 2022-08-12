@@ -103,7 +103,11 @@
                                         <div class="form-group">
                                             <label for="nama">Nama Pasien</label>
                                             <input type="text" class="form-control" id="tgl" name="nama_user" placeholder="Nama Pasien">
-                                        </div>                                        
+                                        </div> 
+                                        <div class="form-group">
+                                            <label for="nik">NIK</label>
+                                            <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK">
+                                        </div>                                               
                                         <div class="form-group">
                                             <label for="keluhan">Keluhan</label>
                                             <textarea class="form-control" id="keluhan" name="keluhan" rows="4" placeholder="Tuliskan keluhan Anda disini"></textarea>

@@ -30,16 +30,7 @@ class m_laporandatapasien extends CI_Model
 		return $query->result_array();
     }
     
-    // function joindatapoli($jenis_poli)
-    // {
-    //     $this->db->select('*');
-    //     $this->db->from('berobat');
-    //     $this->db->join('pasien', 'pasien.nik = berobat.nik');
-    //     $this->db->where('jenis_poli', $jenis_poli);
-    //     $query = $this->db->get();
-    //     return $query->result_array();
-    // }
-
+    
     function joindatapasien($username)
     {
         $this->db->select('*');
@@ -81,5 +72,12 @@ class m_laporandatapasien extends CI_Model
 		$this->db->where($where);
 		$this->db->update($table, $data);
     }
+
+    function view_all(){  
+
+        $this->db->select('*');    
+        $this->db->from('pasien');     
+        return $query = $this->db->get()->result_array();
+    }        
     
 }

@@ -126,6 +126,10 @@
                                 <input type="text" class="form-control" id="nama_user" name="nama_user" placeholder="Nama Lengkap">
                             </div>
                             <div class="col-md-6 col-sm-6">
+                                <label for="nik">NIK</label>
+                                <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK">
+                            </div>
+                            <div class="col-md-6 col-sm-6">
                                 <label for="username">Username</label>
                                 <input type="text" class="form-control" id="username" name="username" placeholder="Username">
                             </div>

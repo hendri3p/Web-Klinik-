@@ -24,6 +24,7 @@ class Welcome extends CI_Controller {
 
 	public function register(){
 		$this->form_validation->set_rules('nama_user', 'nama_user','trim|required');
+		$this->form_validation->set_rules('nik', 'nik','trim|required');
 		$this->form_validation->set_rules('username', 'username','trim|required');
 		$this->form_validation->set_rules('password', 'password','trim|required');
 		$this->form_validation->set_rules('umur', 'umur','trim|required');
@@ -34,10 +35,11 @@ class Welcome extends CI_Controller {
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 			$nama_user = $this->input->post('nama_user');
+			$umur = $this->input->post('nik');
 			$umur = $this->input->post('umur');
 			$alamat = $this->input->post('alamat');
 			$no_telp = $this->input->post('no_telp');
-			$this->m_auth->register($username,$password,$nama_user,$umur,$alamat,$no_telp);
+			$this->m_auth->register($username,$password,$nama_user,$nik,$umur,$alamat,$no_telp);
 			$this->session->set_flashdata('success_register','Proses Pendaftaran User Berhasil');
 			redirect('welcome');
 		}

@@ -92,21 +92,22 @@
             <!-- END Hero -->
             <!-- Page Content -->
             <div class="content">
-            <div class="row" style="margin-top: 50px">
-                <div class="col-xs-4 col-xs-offset-4">
-                    <form action="" method="GET">
-                        <div class="input-group">
-                            <input type="date" name="tgl_berobat" class="form-control ml-3">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="submit" value="Cari">Cari</button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            
             <!-- Dynamic Table Full -->
             <div class="block">
                 <div class="block-content block-content-full">
+                <div class="row" style="margin-bottom: 4px">
+                        <div class="col-xs-4 col-xs-offset-4">
+                            <form action="" method="GET">
+                                <div class="input-group">
+                                    <input type="date" name="tgl_berobat" class="form-control ml-3">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="submit" value="Cari">Cari</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <table class="table table-bordered table-responsive table-striped table-vcenter js-dataTable-full">
                         <thead>
                             <tr>

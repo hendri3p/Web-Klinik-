@@ -43,8 +43,7 @@
             <!-- Side Header -->
             <div class="content-header bg-white-5">
                 <!-- Logo -->
-                <a class="font-w600 text-dual" href="index.html">
-                    <i class="fa fa-circle-notch text-primary"></i>
+                <a class="font-w600 text-dual" >
                     <span class="smini-hide">
                         <span class="font-w700 font-size-h5">Selamat Datang</span> 
                     </span>
@@ -56,8 +55,14 @@
             <div class="content-side content-side-full">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="usr_dash.html">
-                            <span class="nav-main-link-name">Dashboard</span>
+                        <a class="nav-main-link active" href="c_usrdash">
+                            <span class="nav-main-link-name font-size-h6">Dashboard</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_userdaftarberobat'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Daftar Berobat</span>
+                        </a>
+                        <a class="nav-main-link active" href="<?= base_url('c_usrrekammedis'); ?>">
+                            <span class="nav-main-link-name font-size-h6">Rekam Medis</span>
                         </a>
                     </li>
                 </ul>
@@ -73,15 +78,8 @@
                     <div class="content content-narrow content-full">
                         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-5 text-center text-sm-left">
                             <div class="flex-sm-fill">
-                                <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Pendaftaran Berobat</h1>
+                                <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Kartu Pasien</h1>
                                 <h2 class="h4 font-w400 text-white-75 mb-0 invisible" data-toggle="appear" data-timeout="250">Klinik Bidan Nyimas</h2>
-                            </div>
-                            <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
-                                <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                    <a class="btn btn-danger btn-lg btn-block" data-toggle="click-ripple" href="index.html">
-                                        <i class="si si-logout"></i> Logout
-                                    </a>
-                                </span>
                             </div>
                         </div>
                     </div>
@@ -91,51 +89,28 @@
             <!-- Page Content -->
             <div class="content content-narrow">
                 <div class="content">
-                    <!-- Basic -->
-                    <div class="block">
-                        <div class="block-header">
-                            <h3 class="block-title">Form Pendaftaran Berobat</h3>
+                    <br>
+                    <?php foreach ($pasien as $pas) { ?>
+                    <center><a class="btn btn-success" style="margin-top:1rem;"href="<?= base_url('c_cetak/print/').$pas['username'];?>"><i class="fa fa-print"></i>Print</a></center>
+                    <div class="card mb-3 mx-auto" style="max-width: 500px;">
+                        <div class="card-title"><h5 align="center" style="font-size:18px;">KARTU PASIEN</h5>
+                        <p align="center" style="font-size:12px;"><i>KLINIK BIDAN NYIMAS</i></p></div>
+                        <div class="row no-gutters">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <p class="card-text" style="font-size:12px;">NIK&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: <?= $pas['nik']; ?></p>
+                                <p class="card-text" style="font-size:12px;">Nama&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  : <?= $pas['nama_user'];  ?></p>
+                                <p class="card-text" style="font-size:12px;">Alamat  &emsp;  &emsp; : <?= $pas['alamat'];  ?></p>
+                                <p class="card-text" style="font-size:12px;">No.Hp  &emsp; &emsp; &emsp;&emsp;&ensp; : <?= $pas['no_telp'];  ?></p>
+                            </div>
                         </div>
-                        <div class="block-content block-content-full">
-                            <?= $this->session->flashdata('message'); ?>
-                            <form action="<?= base_url('c_userdaftarberobat/daftar'); ?>" method="post">
-                                <div class="row push">
-                                    <div class="col-lg-4">
-                                </div>
-                                    <div class="col-lg-8 col-xl-5">
-                                        <div class="form-group">
-                                            <label for="nama">Nama Pasien</label>
-                                            <input type="text" class="form-control" id="tgl" name="nama_user" placeholder="Nama Pasien">
-                                        </div>                                        
-                                        <div class="form-group">
-                                            <label for="keluhan">Keluhan</label>
-                                            <textarea class="form-control" id="keluhan" name="keluhan" rows="4" placeholder="Tuliskan keluhan Anda disini"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="riwayat">Riwayat Penyakit</label>
-                                            <textarea class="form-control" id="riwayat" name="riwayat_penyakit" rows="4" placeholder="Tuliskan riwayat penyakit Anda disini"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="example-select">Jenis Perawatan</label>
-                                            <select class="form-control" id="jenis" name="jenis_perawatan">
-                                                <option>Pilih Jenis Perawatan</option>
-                                                <option>Bersalin</option>
-                                                <option>KB</option>
-                                                <option>Imunisasi</option>
-                                                <option>Pemeriksaan Kehamilan</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="tgl">Tanggal Berobat</label>
-                                            <input type="date" class="form-control" id="tgl" name="tgl_berobat" placeholder="Tanggal Berobat">
-                                        </div>
-                                        <div class="col-md-12 col-sm-12">
-                                            <button type="submit" class="btn btn-success btn-lg btn-block">Daftar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                        <!-- <div class="col-md-4">
+                            <img src="<?php echo base_url(); ?>assets/images/Logo_Bidan_Nyimas-3.jpg">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+                <?php } ?>
                         <!-- END Page Content -->
         </main>
         <!-- END Main Container -->

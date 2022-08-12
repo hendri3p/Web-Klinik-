@@ -15,6 +15,7 @@ class c_userdaftarberobat extends CI_Controller {
 
 	public function daftar(){
 		$nama_user = $this->input->post('nama_user');		
+		$nik = $this->input->post('nik');		
 		$keluhan = $this->input->post('keluhan');
 		$riwayat_penyakit = $this->input->post('riwayat_penyakit');
 		$jenis_perawatan = $this->input->post('jenis_perawatan');
@@ -24,6 +25,7 @@ class c_userdaftarberobat extends CI_Controller {
  
 		$data = array(
 			'nama_user' => $nama_user,
+			'nik' => $nik,
 			'keluhan' => $keluhan,
 			'riwayat_penyakit' => $riwayat_penyakit,
 			'jenis_perawatan' => $jenis_perawatan,
