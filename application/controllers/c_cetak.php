@@ -15,14 +15,19 @@ class c_cetak extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('user/cetak');
+		$login = $this->session->userdata('pasien_login');
+		$data['login'] = $login;
+		$data['pasien'] = $this->m_laporandatapasien->pasien($login);
+		$this->load->view('user/cetak', $data);
 	}
 
 	public function print()
 	{
-		$id = $this->session->userdata('username');
-		$data['joindatapasien'] = $this->m_laporandatapasien->joindatapasien($username);
-		$this->load->view('user/cetak',$data);
+		// $username = " ";
+		// $id = $this->session->userdata('username');
+		$data['pasien'] = $this->m_laporandatapasien->pasien('user 2');
+		$this->load->view('user/usercetak',$data);
+		
 	}
    
 }

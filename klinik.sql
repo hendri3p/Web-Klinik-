@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2022 at 06:43 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 7.3.29
+-- Generation Time: Aug 29, 2022 at 04:39 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,45 +24,75 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `berobat`
 --
 
-CREATE TABLE `admin` (
-  `id_admin` int(5) NOT NULL,
+CREATE TABLE `berobat` (
+  `id_berobat` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password` varchar(16) NOT NULL
+  `nama_user` varchar(50) NOT NULL,
+  `keluhan` varchar(100) NOT NULL,
+  `riwayat_penyakit` varchar(100) NOT NULL,
+  `jenis_perawatan` varchar(20) NOT NULL,
+  `tgl_berobat` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table `berobat`
 --
 
-INSERT INTO `admin` (`id_admin`, `username`, `password`) VALUES
-(1, 'admin', 'adminadmin');
+INSERT INTO `berobat` (`id_berobat`, `username`, `nama_user`, `keluhan`, `riwayat_penyakit`, `jenis_perawatan`, `tgl_berobat`) VALUES
+(1, 'user 2', 'Chanzu', 'Tidak', 'Ada', 'Imunisasi', '2022-01-01'),
+(2, 'muttaqin', 'Muttaqin', 'Ada', 'Tidak', 'Imunisasi', '2022-01-01'),
+(3, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
+(4, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
+(5, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
+(6, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
+(7, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
+(8, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
+(9, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
+(10, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
+(11, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
+(12, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
+(13, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
+(14, 'user 2', 'Muttaqin Chanzu', 'asd', 'asd', 'Bersalin', '2022-08-28'),
+(15, 'user 2', 'Chanzu', 'ababaa', 'bararababss', 'Bersalin', '2022-08-28');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `diagnosa`
+-- Table structure for table `hasil`
 --
 
-CREATE TABLE `diagnosa` (
-  `id_diagnosa` int(11) NOT NULL,
-  `id_pelayanan` int(11) NOT NULL,
-  `nama_obat` varchar(50) NOT NULL,
-  `harga_obat` varchar(13) NOT NULL
+CREATE TABLE `hasil` (
+  `id_hasil` int(22) NOT NULL,
+  `obat` varchar(100) NOT NULL,
+  `hasil_diagnosa` varchar(100) NOT NULL,
+  `pembayaran` varchar(50) NOT NULL,
+  `id_berobat` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `laporan`
+-- Dumping data for table `hasil`
 --
 
-CREATE TABLE `laporan` (
-  `id_laporan` int(11) NOT NULL,
-  `id_diagnosa` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `hasil` (`id_hasil`, `obat`, `hasil_diagnosa`, `pembayaran`, `id_berobat`, `username`) VALUES
+(1, 'Kartu_Pasien4.png', 'bahhhh', 'Bpjs', 1, 'user 2'),
+(2, '', '', '', 2, 'muttaqin'),
+(3, '', '', '', 3, 'muttaqin'),
+(4, '', '', '', 4, 'muttaqin'),
+(5, '', '', '', 5, 'muttaqin'),
+(6, '', '', '', 6, 'muttaqin'),
+(7, '', '', '', 7, 'muttaqin'),
+(8, '', '', '', 8, 'muttaqin'),
+(9, '', '', '', 9, 'muttaqin'),
+(10, '', '', '', 10, 'muttaqin'),
+(11, 'Logo_Bidan_Nyimas-21.png', 'KTL', 'Bpjs', 11, 'muttaqin'),
+(12, 'Logo_Bidan_Nyimas-2.png', 'KTL', 'Bpjs', 12, 'muttaqin'),
+(13, 'Logo_Bidan_Nyimas-removebg-preview.png', 'bahhhh', 'Bpjs', 13, 'muttaqin'),
+(14, 'Logo_Bidan_Nyimas-removebg-preview1.png', 'bahhhh', 'Bpjs', 14, 'user 2'),
+(15, '', '', '', 0, 'user 2');
 
 -- --------------------------------------------------------
 
@@ -72,83 +102,6 @@ CREATE TABLE `laporan` (
 
 CREATE TABLE `pasien` (
   `id_pasien` int(11) NOT NULL,
-  `tgl_berobat` date NOT NULL,
-  `nama_pasien` varchar(50) NOT NULL,
-  `alamat` varchar(50) NOT NULL,
-  `no_hp` varchar(13) NOT NULL,
-  `pelayanan` varchar(20) NOT NULL,
-  `keluhan` varchar(100) NOT NULL,
-  `obat` varchar(100) NOT NULL,
-  `hasil_diagnosa` varchar(100) NOT NULL,
-  `pembayaran` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pelayanan`
---
-
-CREATE TABLE `pelayanan` (
-  `id_pelayanan` int(11) NOT NULL,
-  `jenis_perawatan` varchar(20) NOT NULL,
-  `tgl_berobat` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pelayanan`
---
-
-INSERT INTO `pelayanan` (`id_pelayanan`, `jenis_perawatan`, `tgl_berobat`) VALUES
-(1, 'KB', '2022-04-08');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pembayaran`
---
-
-CREATE TABLE `pembayaran` (
-  `id_pembayaran` int(11) DEFAULT NULL,
-  `jenis_pembayaran` varchar(20) NOT NULL,
-  `id_diagnosa` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pendaftaran`
---
-
-CREATE TABLE `pendaftaran` (
-  `id_daftar` int(11) NOT NULL,
-  `nama_user` varchar(50) NOT NULL,
-  `keluhan` varchar(100) NOT NULL,
-  `riwayat_penyakit` varchar(100) NOT NULL,
-  `jenis_perawatan` varchar(20) NOT NULL,
-  `tgl_berobat` date NOT NULL,
-  `obat` varchar(100) DEFAULT NULL,
-  `hasil_diagnosa` varchar(100) DEFAULT NULL,
-  `pembayaran` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pendaftaran`
---
-
-INSERT INTO `pendaftaran` (`id_daftar`, `nama_user`, `keluhan`, `riwayat_penyakit`, `jenis_perawatan`, `tgl_berobat`, `obat`, `hasil_diagnosa`, `pembayaran`) VALUES
-(1, '', 'Batuk batuk', 'asma', 'Bersalin', '2022-04-04', NULL, '', ''),
-(2, 'user2', 'gaada', 'gaada', 'KB', '2022-04-08', NULL, NULL, NULL),
-(3, 'user2', 'gaada', 'gaada', 'KB', '2022-04-08', NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `id_user` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(16) NOT NULL,
   `nama_user` varchar(50) NOT NULL,
@@ -158,52 +111,59 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `pasien`
+--
+
+INSERT INTO `pasien` (`id_pasien`, `username`, `password`, `nama_user`, `umur`, `alamat`, `no_telp`) VALUES
+(1, 'tesuser', '$2y$10$94Y.SNlf4', 'tes user', '22', 'Bandar Lampung', '082213589750'),
+(2, 'user 2', 'user2', 'user2', '22', 'Sukarame', '082213589750'),
+(5, 'muttaqin', '123456', 'Muhammad Muttaqin', '23', 'Kemiling', '089626613284'),
+(6, 'Hen3p', 'password', 'Hendri', '99', 'Kemiling', '0921083803'),
+(7, 'username', 'password', 'Nama', '88', 'Kemiling', '0921083803'),
+(8, 'username2', 'password', 'Nama2', '22', 'Kemiling', '0921083803'),
+(9, 'ygbhjnmk', 'njm', 'nama3', '99', 'jnm', '9898');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id_user` int(5) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(16) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `password`, `nama_user`, `umur`, `alamat`, `no_telp`) VALUES
-(1, 'tesuser', '$2y$10$94Y.SNlf4', 'tes user', '22', 'Bandar Lampung', '082213589750'),
-(2, 'user 2', 'user2', 'user2', '22', 'Sukarame', '082213589750');
+INSERT INTO `user` (`id_user`, `username`, `password`) VALUES
+(1, 'admin', 'adminadmin');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `berobat`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_admin`);
+ALTER TABLE `berobat`
+  ADD PRIMARY KEY (`id_berobat`);
 
 --
--- Indexes for table `diagnosa`
+-- Indexes for table `hasil`
 --
-ALTER TABLE `diagnosa`
-  ADD PRIMARY KEY (`id_diagnosa`);
-
---
--- Indexes for table `laporan`
---
-ALTER TABLE `laporan`
-  ADD PRIMARY KEY (`id_laporan`);
+ALTER TABLE `hasil`
+  ADD PRIMARY KEY (`id_hasil`);
 
 --
 -- Indexes for table `pasien`
 --
 ALTER TABLE `pasien`
-  ADD PRIMARY KEY (`id_pasien`);
-
---
--- Indexes for table `pelayanan`
---
-ALTER TABLE `pelayanan`
-  ADD PRIMARY KEY (`id_pelayanan`);
-
---
--- Indexes for table `pendaftaran`
---
-ALTER TABLE `pendaftaran`
-  ADD PRIMARY KEY (`id_daftar`);
+  ADD PRIMARY KEY (`id_pasien`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indexes for table `user`
@@ -216,46 +176,28 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `berobat`
 --
-ALTER TABLE `admin`
-  MODIFY `id_admin` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `berobat`
+  MODIFY `id_berobat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `diagnosa`
+-- AUTO_INCREMENT for table `hasil`
 --
-ALTER TABLE `diagnosa`
-  MODIFY `id_diagnosa` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `laporan`
---
-ALTER TABLE `laporan`
-  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `hasil`
+  MODIFY `id_hasil` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pelayanan`
---
-ALTER TABLE `pelayanan`
-  MODIFY `id_pelayanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `pendaftaran`
---
-ALTER TABLE `pendaftaran`
-  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

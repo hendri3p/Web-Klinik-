@@ -113,7 +113,6 @@
                             <tr>
                                 <th>No</th>
                                 <th>Tanggal</th>
-                                <th>NIK</th>
                                 <th>Nama Pasien</th>
                                 <th>Umur</th>
                                 <th>Alamat</th>
@@ -134,9 +133,8 @@
                                 <tr>
                                     <td><?php echo $no++ ?></td>
                                     <td><?php echo $pas['tgl_berobat'] ?></td>
-                                    <td><?php echo $pas['nik'] ?></td>
                                     <td><?php echo $pas['nama_user']?></td>
-                                    <td><?php echo $pas['umur'] ?></td>
+                                    <td><?php echo $pas['username'] ?></td>
                                     <td><?php echo $pas['alamat'] ?></td>
                                     <td><?php echo $pas['no_telp'] ?></td>
                                     <td><?php echo $pas['jenis_perawatan'] ?></td>
@@ -151,8 +149,8 @@
                                     <td><?php echo $pas['hasil_diagnosa'] ?></td>
                                     <td><?php echo $pas['pembayaran'] ?></td>
                                     <td>
-                                        <?php echo anchor('c_admrawatinap/edit/' . $pas['id_berobat'], 'Edit'); ?>
-                                        <?php echo anchor('c_admrawatinap/hapus/' . $pas['nik'], 'Hapus'); ?>
+                                        <?php echo anchor('c_admrawatinap/edit/' . $pas['id_hasil'], 'Edit'); ?>
+                                        <?php echo anchor('c_admrawatinap/hapus/' . $pas['username'], 'Hapus'); ?>
                                     </td>
                                 </tr>
                             </tbody>

@@ -11,8 +11,9 @@ class m_laporandatapasien extends CI_Model
     function joindata()
     {
         $this->db->select('*');
-        $this->db->from('berobat');
-        $this->db->join('pasien', 'pasien.nik = berobat.nik');
+        $this->db->from('hasil');
+		$this->db->join('pasien', 'pasien.username = hasil.username', 'full outer join');
+		$this->db->join('berobat', 'berobat.id_berobat = hasil.id_berobat', 'full outer join');
         $query = $this->db->get();
         return $query->result_array();
     }
@@ -21,32 +22,57 @@ class m_laporandatapasien extends CI_Model
 	{
 
 		$this->db->select('*');
-		$this->db->from('pasien');
-		$this->db->join('berobat', 'berobat.nik = pasien.nik');
+		$this->db->from('hasil');
+		$this->db->join('pasien', 'pasien.username = hasil.username');
+		$this->db->join('berobat', 'berobat.id_berobat = hasil.id_berobat');
 		$this->db->where('jenis_perawatan', 'KB');
-		$this->db->where('jenis_perawatan', 'Imunisasi');
-		$this->db->where('jenis_perawatan', 'Pemeriksaan Kehamilan');
+		$this->db->or_where('jenis_perawatan', 'Imunisasi');
+		$this->db->or_where('jenis_perawatan', 'Pemeriksaan Kehamilan');
 		$query = $this->db->get();
 		return $query->result_array();
     }
     
+    public function tampil_data_inap()
+	{
+
+		$this->db->select('*');
+		$this->db->from('hasil');
+		$this->db->join('pasien', 'pasien.username = hasil.username');
+		$this->db->join('berobat', 'berobat.id_berobat = hasil.id_berobat');
+		$this->db->where('jenis_perawatan', 'Bersalin');
+		
+		$query = $this->db->get();
+		return $query->result_array();
+    }
+
+    function pasien($username)
+    {
+        $this->db->select('*');
+        $this->db->from('pasien');
+        $this->db->where('username', $username);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
     
     function joindatapasien($username)
     {
         $this->db->select('*');
         $this->db->from('berobat');
-        $this->db->join('pasien', 'pasien.nik = berobat.nik');
-        $this->db->where('username', $username);
+        $this->db->join('pasien', 'pasien.username = berobat.username', 'full outer join');
+		$this->db->join('hasil', 'hasil.id_berobat = berobat.id_berobat', 'full outer join');
+        $this->db->where('berobat.username', $username);
         $query = $this->db->get();
         return $query->result_array();
     }
+    
 
     public function search_join($tgl_berobat)
     {
 
         $this->db->select('*');
         $this->db->from('berobat');
-        $this->db->join('pasien', 'pasien.nik = berobat.nik');
+        $this->db->join('pasien', 'pasien.username = berobat.username', 'full outer join');
+		$this->db->join('hasil', 'hasil.id_berobat = berobat.id_berobat', 'full outer join');
         $this->db->where('tgl_berobat', $tgl_berobat);
         $query = $this->db->get();
         return $query->result_array();

@@ -21,5 +21,13 @@ class m_userdaftarberobat extends CI_Model{
   function update_data($where,$data,$table){
     $this->db->where($where);
     $this->db->update($table,$data);
-  }  
+  }
+  
+  function maxid(){
+    $this->db->select_max('id_berobat');
+    $this->db->from('berobat');
+    $query = $this->db->get();
+    
+    return $query->row()->id;
+  }
 }

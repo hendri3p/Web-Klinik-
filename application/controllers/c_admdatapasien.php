@@ -18,7 +18,7 @@ class c_admdatapasien extends CI_Controller {
 		$data['pasien'] = $this->m_laporandatapasien->joindata();
 		$data['tgl_berobat'] = $this->input->get('tgl_berobat');
 		if (!empty($this->input->get('tgl_berobat'))) {
-			$data['pasien'] = $this->M_rekammedis->search_join($data['tgl_berobat'], $data['jenis_poli']);
+			$data['pasien'] = $this->m_laporandatapasien->search_join($data['tgl_berobat']);
 		}
 		$this->load->view('admin/v_admdatapasien',$data);
 	}

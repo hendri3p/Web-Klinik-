@@ -81,7 +81,7 @@
                         </figure>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-6 col-sm-8">
                     <!-- CONTACT FORM HERE -->
                     <form id="appointment-form" role="form" method="post" action="<?= base_url('Welcome/login'); ?>">
                         <!-- SECTION TITLE -->
@@ -99,7 +99,8 @@
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                             </div>
                            <div class="col-md-12 col-sm-12">
-                                <button type="submit" class="btn btn-success btn-lg btn-block">Login</button>
+                                <label></label>
+                                <button type="submit" class="btn btn-success btn-lg btn-block" name="submit">Login</button>
                            </div>
                         </div>
                     </form>
@@ -124,10 +125,6 @@
                             <div class="col-md-6 col-sm-6">
                                 <label for="nama_user">Nama Lengkap</label>
                                 <input type="text" class="form-control" id="nama_user" name="nama_user" placeholder="Nama Lengkap">
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <label for="nik">NIK</label>
-                                <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK">
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <label for="username">Username</label>

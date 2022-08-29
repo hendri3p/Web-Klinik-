@@ -113,7 +113,6 @@
                             <tr>
                                 <th class="text-center" style="width: 80px;">No</th>
                                 <th>Tanggal</th>
-                                <th>NIK</th>
                                 <th>Nama Pasien</th>
                                 <th>Umur</th>
                                 <th>Alamat</th>
@@ -134,7 +133,6 @@
                                 <tr>
                                     <td><?php echo $no++ ?></td>
                                     <td><?php echo $pas['tgl_berobat'] ?></td>
-                                    <td><?php echo $pas['nik'] ?></td>
                                     <td><?php echo $pas['nama_user'] ?></td>
                                     <td><?php echo $pas['umur'] ?></td>
                                     <td><?php echo $pas['alamat'] ?></td>

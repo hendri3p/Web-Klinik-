@@ -101,22 +101,30 @@
                             <h3 class="block-title"></h3>
                         </div>
                         <div class="block-content block-content-full">
-                            <form action="<?= base_url('c_admrawatjalan/update_data/'); ?><?= $berobat['id_berobat'] ?>" method="POST" enctype="multipart/form-data">
+                            <form action="<?= base_url('c_admrawatjalan/update_data/'); ?><?= $hasil['id_hasil'] ?>" method="POST" enctype="multipart/form-data">
                                 <div class="row push">
                                     <div class="col-lg-4">
                                     </div>
                                     <div class="col-lg-8 col-xl-5">
                                         <div class="form-group">
-                                            <label for="nik">Resep Obat</label>
+                                            <label for="id_hasil">Username Pasien</label>
+                                            <input type="text" class="form-control" name="username"  id="username"  placeholder="Username Akun Pasien" value="<?= $hasil['username'] ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="id_hasil">Resep Obat</label>
                                             <input type="file" name="obat" class="form-control" id="obat">
                                         </div>
                                         <div class="form-group">
-                                            <label for="nik">Hasil Diagnosa</label>
-                                            <input type="text" class="form-control" name="hasil_diagnosa" id="hasil_diagnosa" value="<?= $berobat['hasil_diagnosa'] ?>">
+                                            <label for="id_hasil">Hasil Diagnosa</label>
+                                            <input type="text" class="form-control" name="hasil_diagnosa" id="hasil_diagnosa" value="<?= $hasil['hasil_diagnosa'] ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label for="nik">Pembayaran</label>
-                                            <input type="text" name="pembayaran" class="form-control" id="pembayaran" value="<?= $berobat['pembayaran'] ?>">
+                                        <label for="example-select">Pembayaran</label>
+                                            <select class="form-control" id="pembayaran" name="pembayaran" value="<?= $hasil['pembayaran'] ?>">
+                                                <option>Pilih Jenis Pembayaran</option>
+                                                <option>Bpjs</option>
+                                                <option>Umum</option>
+                                            </select>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
                                             <button type="submit" class="btn btn-success btn-lg btn-block">Simpan</button>

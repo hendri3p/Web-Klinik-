@@ -12,13 +12,13 @@ class m_auth extends CI_Model{
 
   function register($username,$password,$nama_user, $umur, $alamat, $no_telp){
     $data_user = array(
-      'username'=>$username,
+      'username'=>$username,      
       'password'=>$password,
       'nama_user'=>$nama_user,
       'umur'=>$umur,
       'alamat'=>$alamat,
       'no_telp'=>$no_telp
     );
-    $this->db->insert('user',$data_user);
+    $this->db->insert('pasien',$data_user);
   }
 }

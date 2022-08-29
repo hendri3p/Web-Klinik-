@@ -16,6 +16,7 @@ class c_usrdash extends CI_Controller {
 	{
 		$login = $this->session->userdata('pasien_login');
 		$data['login'] = $login;
+		// return $data['login'];
 		$this->load->view('user/v_userdash');
 	}
 }

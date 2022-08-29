@@ -18,7 +18,7 @@ class c_admrawatinap extends CI_Controller {
 	{
 		$login = $this->session->userdata('user_login');
 		$data['login'] = $login;
-		$data['pasien'] = $this->m_laporandatapasien->joindata();
+		$data['pasien'] = $this->m_laporandatapasien->tampil_data_inap();
 		$data['tgl_berobat'] = $this->input->get('tgl_berobat');
 			if (!empty($this->input->get('tgl_berobat'))) {
 				$data['pasien'] = $this->m_laporandatapasien->search_join($data['tgl_berobat']);
@@ -26,26 +26,26 @@ class c_admrawatinap extends CI_Controller {
 		$this->load->view('admin/v_admrawatinap',$data);
 	}
 
-	public function edit($id_berobat)
+	public function edit($id_hasil)
 	{
 		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
-		$where = array('id_berobat' => $id_berobat);
-		$data['berobat'] = $this->m_berobat->edit_data($where, 'berobat')->row_array();
+		$where = array('id_hasil' => $id_hasil);
+		$data['hasil'] = $this->m_berobat->edit_data($id_hasil, 'hasil')->row_array();
 		$this->load->view('admin/v_editdatainap', $data);
 	}
 
-	public function update_data($id_berobat)
+	public function update_data($id_hasil)
 	{ // check image
 		if (!empty($_FILES['obat']['name'])) {
 			$config['upload_path']      = './assets/file_upload';
-			$config['allowed_types']    = 'gif|jpg|png|pdf|docx|doc';
+			$config['allowed_types']    = 'gif|jpg|png|pdf|docx|doc|jpeg';
 			$config['max_size']         = '2048';
 
 			$this->load->library('upload', $config);
 			if (!$this->upload->do_upload('obat')) {
 				$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
-				$where = array('id_berobat' => $id_berobat);
-				$data['berobat'] = $this->m_berobat->edit_data($where, 'berobat')->row_array();
+				$where = array('id_hasil' => $id_hasil);
+				$data['hasil'] = $this->m_berobat->edit_data($id_hasil, 'hasil')->row_array();
 				$this->load->view('admin/v_editdatainap', $data);
 				// input database
 			} else {
@@ -69,10 +69,10 @@ class c_admrawatinap extends CI_Controller {
 					'pembayaran' => $pembayaran,
 				);
 				$where = array(
-					'id_berobat' => $id_berobat
+					'id_hasil' => $id_hasil,
 				);
 
-				$this->m_berobat->update_data($where, $data, 'berobat');
+				$this->m_berobat->update_data($where, $data, 'hasil');
 				redirect('c_admrawatinap/index');
 			}
 		} else {
@@ -86,21 +86,21 @@ class c_admrawatinap extends CI_Controller {
 				'pembayaran' => $pembayaran,
 			);
 			$where = array(
-				'id_berobat' => $id_berobat
+				'id_hasil' => $id_hasil,
 			);
 
-			$this->m_berobat->update_data($where, $data, 'berobat');
+			$this->m_berobat->update_data($where, $data, 'hasil');
 			redirect('c_admrawatinap/index');
 		}
 	}
 
 
-	public function hapus($nik)
+	public function hapus($username)
 	{
 		$where = array(
-			'nik' => $nik
+			'username' => $username
 		);
-		$this->M_berobat->hapus_data($where, 'berobat');
+		$this->M_berobat->hapus_data($where, 'hasil');
 		$this->M_berobat->hapus_data($where, 'pasien');
 		redirect('c_admrawatinap/index');
 	}

@@ -121,7 +121,13 @@ class m_berobat extends CI_Model
 
 	public function edit_data($where, $table)
 	{
-		return $this->db->get_where($table, $where);
+		$this->db->select('*');
+		$this->db->from($table);
+		$this->db->join('berobat', 'berobat.id_berobat = hasil.id_berobat');
+		$this->db->where('hasil.id_berobat', $where);
+		$query = $this->db->get();
+		return $query;
+		// return $this->db->get_where($table, $where);
 	}
 
 	public function update_data($where, $data, $table)

@@ -24,6 +24,8 @@
     <!-- Fonts and OneUI framework -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
     <link rel="stylesheet" id="css-main" href="<?= base_url(); ?>assets/oneui/css/oneui.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/print.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/print.css" type="text/css" media="print">
 
     <!-- END Stylesheets -->
     <link rel="stylesheet" href="<?= base_url(); ?>assets/oneui/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
@@ -33,7 +35,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/oneui/js/plugins/dropzone/dist/min/dropzone.min.css">
 </head>
 
-<body>
+<body onload="print()">
     <!-- Page Container -->
 
     <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
@@ -91,22 +93,27 @@
                 <div class="content">
                     <br>
                     <?php foreach ($pasien as $pas) { ?>
-                    <center><a class="btn btn-success" style="margin-top:1rem;"href="<?= base_url('c_cetak/print/').$pas['username'];?>"><i class="fa fa-print"></i>Print</a></center>
-                    <div class="card mb-3 mx-auto" style="max-width: 500px;">
-                        <div class="card-title"><h5 align="center" style="font-size:18px;">KARTU PASIEN</h5>
-                        <p align="center" style="font-size:12px;"><i>KLINIK BIDAN NYIMAS</i></p></div>
-                        <div class="row no-gutters">
+                    <!-- <center><a  class="btn btn-success" style="margin-top:1rem;"href="<?= base_url('c_cetak/print/').$pas['username'];?>"><i class="fa fa-print"></i>Print</a></center> -->
+                    <div class="card mb-3 mx-auto " style="max-width: 500px;" >
+                        <div class="card-title">
+                            <h1 align="center" style="font-size:30px;">KARTU PASIEN</h1>
+                            <p align="center" style="font-size:12px;">KLINIK BIDAN NYIMAS</p>
+                            <h3 align="center" style="font-size:12px;">Jl.Poksai, Beringin Raya, Kec. Kemiling, Bandar Lampung</h3>
+                        </div>
+                    <div class="row no-gutters">
                         <div class="col-md-8">
                             <div class="card-body">
-                                <p class="card-text" style="font-size:12px;">NIK&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: <?= $pas['nik']; ?></p>
-                                <p class="card-text" style="font-size:12px;">Nama&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  : <?= $pas['nama_user'];  ?></p>
-                                <p class="card-text" style="font-size:12px;">Alamat  &emsp;  &emsp; : <?= $pas['alamat'];  ?></p>
-                                <p class="card-text" style="font-size:12px;">No.Hp  &emsp; &emsp; &emsp;&emsp;&ensp; : <?= $pas['no_telp'];  ?></p>
+                                <p class="card-text" style="font-size:12px;">Nama&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  : <?= $pas['nama_user'];  ?></p>
+                                <p class="card-text" style="font-size:12px;">Username&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  : <?= $pas['username'];  ?></p>
+                                <p class="card-text" style="font-size:12px;">Umur&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : <?= $pas['umur']; ?></p>
+                                <p class="card-text" style="font-size:12px;">Alamat&emsp;&emsp;&emsp;&emsp;&emsp;  &emsp; : <?= $pas['alamat'];  ?></p>
+                                <p class="card-text" style="font-size:12px;">No.Hp &emsp; &emsp; &emsp;&emsp;&ensp; &emsp; : <?= $pas['no_telp'];  ?></p>
+                                
                             </div>
                         </div>
-                        <!-- <div class="col-md-4">
-                            <img src="<?php echo base_url(); ?>assets/images/Logo_Bidan_Nyimas-3.jpg">
-                        </div> -->
+                        <div class="col-md-2">
+                        <img width="160" height="160" src="<?php echo base_url(); ?>assets/images/Logo_Bidan_Nyimas-3.png">
+                        </div>
                     </div>
                 </div>
             </div>
