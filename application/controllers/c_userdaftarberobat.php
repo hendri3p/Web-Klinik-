@@ -25,7 +25,7 @@ class c_userdaftarberobat extends CI_Controller {
 		$jenis_perawatan = $this->input->post('jenis_perawatan');
 		$tgl_berobat = $this->input->post('tgl_berobat');
 
-		// $max = $this->m_userdaftarberobat->maxid();
+		$max = $this->m_userdaftarberobat->maxid();
 
 		$data = array(
 			'username' => $login,
@@ -40,7 +40,7 @@ class c_userdaftarberobat extends CI_Controller {
 			'username' => $login,
 			'obat' => '',
 			'hasil_diagnosa' => '',
-			// 'id_berobat' => $max
+			'id_berobat' => $max+1
 			);
 		$this->db->insert('berobat',$data);
 		$this->db->insert('hasil',$data2);

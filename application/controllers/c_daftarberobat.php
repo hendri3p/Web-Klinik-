@@ -7,6 +7,7 @@ class c_daftarberobat extends CI_Controller {
 		parent::__construct();		
 		$this->load->model('m_laporandatapasien');
 		$this->load->model('m_berobat');	
+		$this->load->model('m_userdaftarberobat');
 		$this->load->helper('url');
     }
 
@@ -26,8 +27,8 @@ class c_daftarberobat extends CI_Controller {
 		$riwayat_penyakit = $this->input->post('riwayat_penyakit');
 		$jenis_perawatan = $this->input->post('jenis_perawatan');
 		$tgl_berobat = $this->input->post('tgl_berobat');
-
-						
+		
+		$max = $this->m_userdaftarberobat->maxid();				
  
 		$data = array(
 			'nama_user' => $nama_user,
@@ -37,7 +38,14 @@ class c_daftarberobat extends CI_Controller {
 			'jenis_perawatan' => $jenis_perawatan,
 			'tgl_berobat' => $tgl_berobat
 			);
+		$data2 = array(
+			'username' => $username,
+			'obat' => '',
+			'hasil_diagnosa' => '',
+			'id_berobat' => $max+1
+			);
 		$this->db->insert('berobat',$data);
+		$this->db->insert('hasil',$data2);
 		redirect('c_admdash');
 	}	
 

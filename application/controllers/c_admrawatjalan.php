@@ -23,6 +23,10 @@ class c_admrawatjalan extends CI_Controller {
 			if (!empty($this->input->get('tgl_berobat'))) {
 				$data['pasien'] = $this->m_laporandatapasien->search_join($data['tgl_berobat']);
 			}
+		$data['searchh'] = $this->input->get('searchh');
+			if (!empty($this->input->get('searchh'))) {			
+				$data['pasien'] = $this->m_laporandatapasien->search_join_nama($data['searchh']);
+			}	
 		$this->load->view('admin/v_admrawatjalan',$data);
 	}
 
@@ -95,13 +99,14 @@ class c_admrawatjalan extends CI_Controller {
 	}
 
 
-	public function hapus($id_pasien)
+	public function hapus($id_hasil)
 	{
 		$where = array(
-			'id_pasien' => $id_pasien
+			'id_berobat' => $id_hasil
 		);
-		$this->M_berobat->hapus_data($where, 'hasil');
-		$this->M_berobat->hapus_data($where, 'pasien');
+		// $this->m_berobat->hapus_data($where, 'pasien');
+		$this->m_berobat->hapus_data($where, 'berobat');
+		$this->m_berobat->hapus_data($where, 'hasil');
 		redirect('c_admrawatjalan/index');
 	}
 }

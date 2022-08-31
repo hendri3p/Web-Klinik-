@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2022 at 04:39 AM
+-- Generation Time: Aug 31, 2022 at 12:10 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -42,21 +42,9 @@ CREATE TABLE `berobat` (
 --
 
 INSERT INTO `berobat` (`id_berobat`, `username`, `nama_user`, `keluhan`, `riwayat_penyakit`, `jenis_perawatan`, `tgl_berobat`) VALUES
-(1, 'user 2', 'Chanzu', 'Tidak', 'Ada', 'Imunisasi', '2022-01-01'),
-(2, 'muttaqin', 'Muttaqin', 'Ada', 'Tidak', 'Imunisasi', '2022-01-01'),
-(3, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
-(4, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
-(5, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
-(6, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
-(7, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
-(8, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
-(9, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
-(10, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
-(11, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
-(12, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
-(13, 'muttaqin', 'Muttaqin Chanzu', 'o', 'o', 'Imunisasi', '2022-01-01'),
-(14, 'user 2', 'Muttaqin Chanzu', 'asd', 'asd', 'Bersalin', '2022-08-28'),
-(15, 'user 2', 'Chanzu', 'ababaa', 'bararababss', 'Bersalin', '2022-08-28');
+(2, 'muttaqin', 'Dinda', 'Sakit perut', 'Ada', 'KB', '2022-02-02'),
+(3, 'muttaqin', 'Hendri', 'uwaw', 'awawwaa', 'Bersalin', '2022-08-31'),
+(4, 'muttaqin', 'Hendri', 'adadaww', 'wadadada', 'Bersalin', '2022-08-31');
 
 -- --------------------------------------------------------
 
@@ -69,7 +57,7 @@ CREATE TABLE `hasil` (
   `obat` varchar(100) NOT NULL,
   `hasil_diagnosa` varchar(100) NOT NULL,
   `pembayaran` varchar(50) NOT NULL,
-  `id_berobat` int(11) NOT NULL,
+  `id_berobat` varchar(11) NOT NULL,
   `username` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -78,21 +66,8 @@ CREATE TABLE `hasil` (
 --
 
 INSERT INTO `hasil` (`id_hasil`, `obat`, `hasil_diagnosa`, `pembayaran`, `id_berobat`, `username`) VALUES
-(1, 'Kartu_Pasien4.png', 'bahhhh', 'Bpjs', 1, 'user 2'),
-(2, '', '', '', 2, 'muttaqin'),
-(3, '', '', '', 3, 'muttaqin'),
-(4, '', '', '', 4, 'muttaqin'),
-(5, '', '', '', 5, 'muttaqin'),
-(6, '', '', '', 6, 'muttaqin'),
-(7, '', '', '', 7, 'muttaqin'),
-(8, '', '', '', 8, 'muttaqin'),
-(9, '', '', '', 9, 'muttaqin'),
-(10, '', '', '', 10, 'muttaqin'),
-(11, 'Logo_Bidan_Nyimas-21.png', 'KTL', 'Bpjs', 11, 'muttaqin'),
-(12, 'Logo_Bidan_Nyimas-2.png', 'KTL', 'Bpjs', 12, 'muttaqin'),
-(13, 'Logo_Bidan_Nyimas-removebg-preview.png', 'bahhhh', 'Bpjs', 13, 'muttaqin'),
-(14, 'Logo_Bidan_Nyimas-removebg-preview1.png', 'bahhhh', 'Bpjs', 14, 'user 2'),
-(15, '', '', '', 0, 'user 2');
+(3, '', '', '', '3', 'muttaqin'),
+(4, '', '', '', '4', 'muttaqin');
 
 -- --------------------------------------------------------
 
@@ -179,13 +154,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `berobat`
 --
 ALTER TABLE `berobat`
-  MODIFY `id_berobat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_berobat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `hasil`
 --
 ALTER TABLE `hasil`
-  MODIFY `id_hasil` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_hasil` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pasien`

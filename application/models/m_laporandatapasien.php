@@ -77,6 +77,20 @@ class m_laporandatapasien extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+
+    public function search_join_nama($searchh)
+    {
+
+        $this->db->select('tgl_berobat, berobat.nama_user, umur, alamat, no_telp, jenis_perawatan, riwayat_penyakit, keluhan, obat, hasil_diagnosa,pembayaran, pasien.username, id_hasil');
+        $this->db->from('berobat');
+        $this->db->join('pasien', 'pasien.username = berobat.username', 'full outer join');
+		$this->db->join('hasil', 'hasil.id_berobat = berobat.id_berobat', 'full outer join');
+        $this->db->where('berobat.nama_user', $searchh);
+        $this->db->or_where('jenis_perawatan', $searchh);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
     public function input_data($data, $table)
 	{
 		$this->db->insert($table, $data);

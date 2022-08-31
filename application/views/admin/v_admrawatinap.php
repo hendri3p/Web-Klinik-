@@ -103,12 +103,23 @@
                                     <input type="date" name="tgl_berobat" class="form-control ml-3">
                                     <span class="input-group-btn">
                                         <button class="btn btn-default" type="submit" value="Cari">Cari</button>
+                                        <a href="<?= base_url('c_admrawatinap') ?>" class="btn btn-warning">Clear</a>
+                                    </span>
+                                </div>
+                            </form>
+                            <br>
+                            <form action="" method="GET">
+                                <div class="input-group">
+                                    <input type="search" name="searchh" class="form-control ml-3" id="searchh" placeholder="Nama Pasien">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="submit" value="Cari">Cari</button>
+                                        <a href="<?= base_url('c_admrawatinap') ?>" class="btn btn-warning">Clear</a>
                                     </span>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <table class="table table-bordered table-responsive table-striped table-vcenter js-dataTable-full">
+                    <table class="table table-bordered table-responsive table-striped table-vcenter ">
                         <thead>
                             <tr>
                                 <th>No</th>
