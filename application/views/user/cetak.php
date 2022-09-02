@@ -94,7 +94,7 @@
                     <br>
                     <?php foreach ($pasien as $pas) { ?>
                     <!-- <center><a  class="btn btn-success" style="margin-top:1rem;"href="<?= base_url('c_cetak/print/').$pas['username'];?>"><i class="fa fa-print"></i>Print</a></center> -->
-                    <div class="card mb-3 mx-auto " style="max-width: 500px;" >
+                    <div class="card mb-3 mx-auto bg-white" style="max-width: 500px;" >
                         <div class="card-title">
                             <h1 align="center" style="font-size:30px;">KARTU PASIEN</h1>
                             <p align="center" style="font-size:12px;">KLINIK BIDAN NYIMAS</p>
@@ -104,7 +104,7 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <p class="card-text" style="font-size:12px;">Nama&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  : <?= $pas['nama_user'];  ?></p>
-                                <p class="card-text" style="font-size:12px;">Username&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  : <?= $pas['username'];  ?></p>
+                                <p class="card-text" style="font-size:12px;">Username&emsp;&emsp;&emsp;&emsp;&emsp; : <?= $pas['username'];  ?></p>
                                 <p class="card-text" style="font-size:12px;">Umur&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : <?= $pas['umur']; ?></p>
                                 <p class="card-text" style="font-size:12px;">Alamat&emsp;&emsp;&emsp;&emsp;&emsp;  &emsp; : <?= $pas['alamat'];  ?></p>
                                 <p class="card-text" style="font-size:12px;">No.Hp &emsp; &emsp; &emsp;&emsp;&ensp; &emsp; : <?= $pas['no_telp'];  ?></p>

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class m_berobat extends CI_Model
+class M_berobat extends CI_Model
 {
 	public function tampil_data_jalan()
 	{

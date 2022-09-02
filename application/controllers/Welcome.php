@@ -6,17 +6,17 @@ class Welcome extends CI_Controller {
 		function __construct()
 	{
 		parent::__construct();
-		$this->load->model('m_auth');
+		$this->load->model('M_auth');
 	}
 
 	public function index()
 	{
 		        // Cek apakah sudah login atau belum?
         if ($this->session->userdata('user_login')) {
-            redirect('c_admdash');
+            redirect('C_admdash');
         }
         if ($this->session->userdata('pasien_login')) {
-            redirect('c_usrdash');
+            redirect('C_usrdash');
         }
 
 		$this->load->view('welcome_message');
@@ -24,11 +24,11 @@ class Welcome extends CI_Controller {
 
 	public function register(){
 		$this->form_validation->set_rules('nama_user', 'nama_user','trim|required');
-		$this->form_validation->set_rules('username', 'username','trim|required|unique');
+		$this->form_validation->set_rules('username', 'username','trim|required|is_unique[pasien.username]');
 		$this->form_validation->set_rules('password', 'password','trim|required');
-		$this->form_validation->set_rules('umur', 'umur','trim|required');
+		$this->form_validation->set_rules('umur', 'umur','trim');
 		$this->form_validation->set_rules('alamat', 'alamat','trim|required');
-		$this->form_validation->set_rules('no_telp', 'no_telp','trim|required');
+		$this->form_validation->set_rules('no_telp', 'no_telp','trim');
 		if ($this->form_validation->run()==true)
 	   	{
 			$username = $this->input->post('username');
@@ -39,12 +39,12 @@ class Welcome extends CI_Controller {
 			$no_telp = $this->input->post('no_telp');
 			$this->m_auth->register($username,$password,$nama_user,$umur,$alamat,$no_telp);
 			$this->session->set_flashdata('success_register','Proses Pendaftaran User Berhasil');
-			redirect('welcome');
+			redirect('Welcome');
 		}
 		else
 		{
 			$this->session->set_flashdata('error', validation_errors());
-			redirect('welcome');
+			redirect('Welcome');
 		}
 	}
 
@@ -78,7 +78,7 @@ class Welcome extends CI_Controller {
                 ];
             
                 $this->session->set_userdata($data);
-                redirect('c_admdash');
+                redirect('C_admdash');
             }
             else 
             {
@@ -97,7 +97,7 @@ class Welcome extends CI_Controller {
                 ];
                 
                 $this->session->set_userdata($data);
-                redirect('c_usrdash');
+                redirect('C_usrdash');
             }
             else 
             {
@@ -115,9 +115,8 @@ class Welcome extends CI_Controller {
 	}
 
 	public function logout(){
-		        $this->session->unset_userdata('user_login');
-                $this->session->unset_userdata('pasien_login');
-                $this->session->set_flashdata('message','<div class="alert alert-success" role="alert"> Berhasil Keluar! </div>');
+        $this->session->sess_destroy();
+        $this->session->set_flashdata('message','<div class="alert alert-success" role="alert"> Berhasil Keluar! </div>');
                 redirect(base_url());
 	}
 	

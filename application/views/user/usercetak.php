@@ -8,7 +8,7 @@
   <body onload="print()">
     <div class="cetak">
     <?php foreach ($pasien as $pas) { ?>
-    <div class="card mb-3 bg-light" style="max-width: 540px;">
+    <div class="card mb-3 " style="max-width: 540px;">
       <div class="card-title"
       ><h5 align="center" style="font-size:18px;">KARTU PASIEN</h5>
       <p align="center" style="font-size:12px;">KLINIK BIDAN NYIMAS</p>

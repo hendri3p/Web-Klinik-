@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class c_admrawatjalan extends CI_Controller {
+class C_admrawatjalan extends CI_Controller {
 
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('m_berobat');
-		$this->load->model('m_laporandatapasien');
+		$this->load->model('M_berobat');
+		$this->load->model('M_laporandatapasien');
 		if ($this->session->userdata('status') != "login") {
 			redirect(base_url("Welcome"));
 		}
@@ -18,14 +18,14 @@ class c_admrawatjalan extends CI_Controller {
 	{
 		$login = $this->session->userdata('user_login');
 		$data['login'] = $login;
-		$data['pasien'] = $this->m_laporandatapasien->tampil_data_jalan();
+		$data['pasien'] = $this->M_laporandatapasien->tampil_data_jalan();
 		$data['tgl_berobat'] = $this->input->get('tgl_berobat');
 			if (!empty($this->input->get('tgl_berobat'))) {
-				$data['pasien'] = $this->m_laporandatapasien->search_join($data['tgl_berobat']);
+				$data['pasien'] = $this->M_laporandatapasien->search_join($data['tgl_berobat']);
 			}
 		$data['searchh'] = $this->input->get('searchh');
 			if (!empty($this->input->get('searchh'))) {			
-				$data['pasien'] = $this->m_laporandatapasien->search_join_nama($data['searchh']);
+				$data['pasien'] = $this->M_laporandatapasien->search_join_nama($data['searchh']);
 			}	
 		$this->load->view('admin/v_admrawatjalan',$data);
 	}
@@ -34,7 +34,7 @@ class c_admrawatjalan extends CI_Controller {
 	{
 		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 		$where = array('id_hasil' => $id_hasil);
-		$data['hasil'] = $this->m_berobat->edit_data($id_hasil, 'hasil')->row_array();
+		$data['hasil'] = $this->M_berobat->edit_data($id_hasil, 'hasil')->row_array();
 		$this->load->view('admin/v_editdatajalan', $data);
 	}
 
@@ -49,7 +49,7 @@ class c_admrawatjalan extends CI_Controller {
 			if (!$this->upload->do_upload('obat')) {
 				$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 				$where = array('id_hasil' => $id_hasil);
-				$data['hasil'] = $this->m_berobat->edit_data($id_hasil, 'hasil')->row_array();
+				$data['hasil'] = $this->M_berobat->edit_data($id_hasil, 'hasil')->row_array();
 				$this->load->view('admin/v_editdatajalan', $data);
 				// input database
 			} else {
@@ -77,7 +77,7 @@ class c_admrawatjalan extends CI_Controller {
 				);
 
 				$this->m_berobat->update_data($where, $data, 'hasil');
-				redirect('c_admrawatjalan/index');
+				redirect('C_admrawatjalan/index');
 			}
 		} else {
 			$hasil_diagnosa = $this->input->post('hasil_diagnosa');
@@ -94,7 +94,7 @@ class c_admrawatjalan extends CI_Controller {
 			);
 
 			$this->m_berobat->update_data($where, $data, 'hasil');
-			redirect('c_admrawatjalan/index');
+			redirect('C_admrawatjalan/index');
 		}
 	}
 
@@ -105,9 +105,9 @@ class c_admrawatjalan extends CI_Controller {
 			'id_berobat' => $id_hasil
 		);
 		// $this->m_berobat->hapus_data($where, 'pasien');
-		$this->m_berobat->hapus_data($where, 'berobat');
-		$this->m_berobat->hapus_data($where, 'hasil');
-		redirect('c_admrawatjalan/index');
+		$this->M_berobat->hapus_data($where, 'berobat');
+		$this->M_berobat->hapus_data($where, 'hasil');
+		redirect('C_admrawatjalan/index');
 	}
 }
 

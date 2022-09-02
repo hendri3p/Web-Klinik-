@@ -1,6 +1,6 @@
 <?php 
  
-class m_userdaftarberobat extends CI_Model{
+class M_userdaftarberobat extends CI_Model{
   function tampil_data(){
     return $this->db->get('pendaftaran');
   }

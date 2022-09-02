@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class c_usrdash extends CI_Controller {
+class C_usrdash extends CI_Controller {
 
 	function __construct()
 	{

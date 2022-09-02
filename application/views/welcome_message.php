@@ -132,7 +132,7 @@
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <label for="password">Password</label>
-                                <input type="text" name="password" placeholder="Password" class="form-control">
+                                <input type="text" name="password"  id="password" placeholder="Password" class="form-control">
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <label for="Umur">Umur</label>
